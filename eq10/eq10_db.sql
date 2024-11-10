@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS producto
     nombre      VARCHAR(128)  NOT NULL,
     precio      DECIMAL       NOT NULL,
     descripcion VARCHAR(1024) NOT NULL,
+    img_path    VARCHAR(512)  NOT NULL,
     id_pais     INT           NOT NULL,
     CONSTRAINT pk_producto PRIMARY KEY (id),
     CONSTRAINT fk_pais_producto FOREIGN KEY (id_pais) REFERENCES pais (id)
@@ -113,92 +114,75 @@ INSERT INTO pais (nombre)
 VALUES ('Italia');
 INSERT INTO pais (nombre)
 VALUES ('España');
+INSERT INTO pais (nombre)
+VALUES ('Corea del Sur');
+INSERT INTO pais (nombre)
+VALUES ('Vietnam');
+INSERT INTO pais (nombre)
+VALUES ('Tailandia');
+INSERT INTO pais (nombre)
+VALUES ('Filipinas');
+INSERT INTO pais (nombre)
+VALUES ('Indonesia');
+INSERT INTO pais (nombre)
+VALUES ('Colombia');
+INSERT INTO pais (nombre)
+VALUES ('Perú');
+INSERT INTO pais (nombre)
+VALUES ('Chile');
+INSERT INTO pais (nombre)
+VALUES ('Venezuela');
+INSERT INTO pais (nombre)
+VALUES ('Uruguay');
+INSERT INTO pais (nombre)
+VALUES ('Portugal');
+INSERT INTO pais (nombre)
+VALUES ('Bélgica');
+INSERT INTO pais (nombre)
+VALUES ('Países Bajos');
+INSERT INTO pais (nombre)
+VALUES ('Suiza');
+INSERT INTO pais (nombre)
+VALUES ('Suecia');
 
 INSERT INTO categoria (nombre)
-VALUES ('Frutas');
+VALUES ('Chocolates');
 INSERT INTO categoria (nombre)
-VALUES ('Verduras');
+VALUES ('Caramelos');
 INSERT INTO categoria (nombre)
-VALUES ('Carnes');
+VALUES ('Gomitas');
 INSERT INTO categoria (nombre)
-VALUES ('Pescados');
+VALUES ('Chicles');
 INSERT INTO categoria (nombre)
-VALUES ('Cereales');
+VALUES ('Turrones');
 INSERT INTO categoria (nombre)
-VALUES ('Frutos secos');
+VALUES ('Barras de cereal');
 INSERT INTO categoria (nombre)
-VALUES ('Aceites');
+VALUES ('Paletas');
 INSERT INTO categoria (nombre)
-VALUES ('Bebidas');
+VALUES ('Galletas');
 INSERT INTO categoria (nombre)
-VALUES ('Especias');
+VALUES ('Ácidos');
 INSERT INTO categoria (nombre)
-VALUES ('Salsas');
-INSERT INTO categoria (nombre)
-VALUES ('Conservas');
-INSERT INTO categoria (nombre)
-VALUES ('Congelados');
-INSERT INTO categoria (nombre)
-VALUES ('Snacks');
-INSERT INTO categoria (nombre)
-VALUES ('Comida rápida');
+VALUES ('Picosos');
 
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Manzana', 1.20, 'Manzana roja fresca', 1);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Plátano', 0.80, 'Plátano maduro', 2);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Carne de res', 10.50, 'Carne de res de alta calidad', 3);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Salmón', 15.00, 'Salmón fresco', 4);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Arroz', 2.00, 'Arroz blanco', 5);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Almendras', 12.00, 'Almendras crudas', 6);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Aceite de oliva', 8.00, 'Aceite de oliva extra virgen', 7);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Vino tinto', 20.00, 'Vino tinto de alta calidad', 8);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Pimienta', 3.00, 'Pimienta negra molida', 9);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Salsa de tomate', 2.50, 'Salsa de tomate casera', 10);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Atún enlatado', 1.50, 'Atún enlatado en aceite', 11);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Helado de vainilla', 5.00, 'Helado de vainilla cremoso', 12);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Patatas fritas', 1.00, 'Patatas fritas crujientes', 13);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Pizza', 8.00, 'Pizza de pepperoni', 1);
-INSERT INTO producto (nombre, precio, descripcion, id_pais)
-VALUES ('Cerveza', 2.00, 'Cerveza artesanal', 5);
-
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (1, 1);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (1, 2);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (2, 1);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (3, 3);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (4, 4);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (5, 5);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (6, 6);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (7, 7);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (8, 9);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (9, 10);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (10, 11);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (11, 12);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (12, 13);
-INSERT INTO producto_categoria (id_producto, id_categoria)
-VALUES (13, 14);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Chocolate Bar', 1.99, 'Delicious chocolate bar', 'not_img.jpg', 1);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Gummy Bears', 2.49, 'Colorful gummy bears', 'not_img.jpg', 2);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Caramel Candy', 1.29, 'Sweet caramel candy', 'not_img.jpg', 3);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Bubble Gum', 0.99, 'Chewy bubble gum', 'not_img.jpg', 4);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Nougat', 2.99, 'Soft nougat', 'not_img.jpg', 5);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Cereal Bar', 1.49, 'Healthy cereal bar', 'not_img.jpg', 6);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Lollipop', 0.79, 'Sweet lollipop', 'not_img.jpg', 7);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Cookie', 1.99, 'Crunchy cookie', 'not_img.jpg', 8);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Sour Candy', 1.49, 'Tangy sour candy', 'not_img.jpg', 9);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Spicy Candy', 1.99, 'Hot and spicy candy', 'not_img.jpg', 10);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Mint Candy', 1.29, 'Refreshing mint candy', 'not_img.jpg', 11);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Fruit Chews', 1.99, 'Fruity chewy candy', 'not_img.jpg', 12);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Toffee', 2.49, 'Rich toffee', 'not_img.jpg', 13);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Jelly Beans', 2.99, 'Assorted jelly beans', 'not_img.jpg', 14);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Hard Candy', 1.49, 'Hard candy', 'not_img.jpg', 15);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Licorice', 1.99, 'Sweet licorice', 'not_img.jpg', 16);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Marshmallow', 1.29, 'Soft marshmallow', 'not_img.jpg', 17);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Peanut Brittle', 2.49, 'Crunchy peanut brittle', 'not_img.jpg', 18);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Candy Cane', 0.99, 'Festive candy cane', 'not_img.jpg', 19);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Chocolate Truffle', 3.99, 'Decadent chocolate truffle', 'not_img.jpg', 20);
