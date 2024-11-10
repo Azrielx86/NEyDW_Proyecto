@@ -541,3 +541,19 @@ body {
     }
 
 }
+
+span.lbl-categoria {
+    background-color: #60C3CE;
+    margin: 0.1rem;
+    padding: 0.2rem;
+    border-radius: 15px;
+}
+
+td {
+    border: black 1px solid;
+    padding: 0.2rem;
+}
+
+th {
+    border: black 1px solid;
+}

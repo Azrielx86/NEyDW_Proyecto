@@ -166,23 +166,110 @@ VALUES ('Ácidos');
 INSERT INTO categoria (nombre)
 VALUES ('Picosos');
 
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Chocolate Bar', 1.99, 'Delicious chocolate bar', 'not_img.jpg', 1);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Gummy Bears', 2.49, 'Colorful gummy bears', 'not_img.jpg', 2);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Caramel Candy', 1.29, 'Sweet caramel candy', 'not_img.jpg', 3);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Bubble Gum', 0.99, 'Chewy bubble gum', 'not_img.jpg', 4);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Nougat', 2.99, 'Soft nougat', 'not_img.jpg', 5);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Cereal Bar', 1.49, 'Healthy cereal bar', 'not_img.jpg', 6);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Lollipop', 0.79, 'Sweet lollipop', 'not_img.jpg', 7);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Cookie', 1.99, 'Crunchy cookie', 'not_img.jpg', 8);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Sour Candy', 1.49, 'Tangy sour candy', 'not_img.jpg', 9);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Spicy Candy', 1.99, 'Hot and spicy candy', 'not_img.jpg', 10);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Mint Candy', 1.29, 'Refreshing mint candy', 'not_img.jpg', 11);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Fruit Chews', 1.99, 'Fruity chewy candy', 'not_img.jpg', 12);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Toffee', 2.49, 'Rich toffee', 'not_img.jpg', 13);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Jelly Beans', 2.99, 'Assorted jelly beans', 'not_img.jpg', 14);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Hard Candy', 1.49, 'Hard candy', 'not_img.jpg', 15);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Licorice', 1.99, 'Sweet licorice', 'not_img.jpg', 16);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Marshmallow', 1.29, 'Soft marshmallow', 'not_img.jpg', 17);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Peanut Brittle', 2.49, 'Crunchy peanut brittle', 'not_img.jpg', 18);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Candy Cane', 0.99, 'Festive candy cane', 'not_img.jpg', 19);
-INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais) VALUES ('Chocolate Truffle', 3.99, 'Decadent chocolate truffle', 'not_img.jpg', 20);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Chocolate Bar', 1.99, 'Delicious chocolate bar', 'not_img.jpg', 1);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Gummy Bears', 2.49, 'Colorful gummy bears', 'not_img.jpg', 2);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Caramel Candy', 1.29, 'Sweet caramel candy', 'not_img.jpg', 3);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Bubble Gum', 0.99, 'Chewy bubble gum', 'not_img.jpg', 4);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Nougat', 2.99, 'Soft nougat', 'not_img.jpg', 5);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Cereal Bar', 1.49, 'Healthy cereal bar', 'not_img.jpg', 6);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Lollipop', 0.79, 'Sweet lollipop', 'not_img.jpg', 7);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Cookie', 1.99, 'Crunchy cookie', 'not_img.jpg', 8);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Sour Candy', 1.49, 'Tangy sour candy', 'not_img.jpg', 9);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Spicy Candy', 1.99, 'Hot and spicy candy', 'not_img.jpg', 10);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Mint Candy', 1.29, 'Refreshing mint candy', 'not_img.jpg', 11);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Fruit Chews', 1.99, 'Fruity chewy candy', 'not_img.jpg', 12);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Toffee', 2.49, 'Rich toffee', 'not_img.jpg', 13);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Jelly Beans', 2.99, 'Assorted jelly beans', 'not_img.jpg', 14);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Hard Candy', 1.49, 'Hard candy', 'not_img.jpg', 15);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Licorice', 1.99, 'Sweet licorice', 'not_img.jpg', 16);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Marshmallow', 1.29, 'Soft marshmallow', 'not_img.jpg', 17);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Peanut Brittle', 2.49, 'Crunchy peanut brittle', 'not_img.jpg', 18);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Candy Cane', 0.99, 'Festive candy cane', 'not_img.jpg', 19);
+INSERT INTO producto (nombre, precio, descripcion, img_path, id_pais)
+VALUES ('Chocolate Truffle', 3.99, 'Decadent chocolate truffle', 'not_img.jpg', 20);
+
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (1, 1);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (1, 2);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (2, 3);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (2, 4);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (3, 2);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (3, 5);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (4, 4);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (4, 6);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (5, 5);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (5, 7);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (6, 6);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (6, 8);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (7, 7);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (7, 9);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (8, 8);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (8, 10);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (10, 1);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (11, 2);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (11, 3);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (12, 3);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (12, 4);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (13, 2);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (13, 5);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (14, 3);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (14, 6);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (15, 2);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (16, 2);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (16, 8);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (17, 3);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (18, 2);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (18, 10);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (19, 2);
+INSERT INTO producto_categoria (id_producto, id_categoria)
+VALUES (20, 1);

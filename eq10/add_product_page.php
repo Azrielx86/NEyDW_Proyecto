@@ -20,14 +20,15 @@ require "./config.php"
         $precio = $_POST["precio"];
         $id_pais = $_POST["pais"];
         $descripcion = $_POST["descripcion"];
+        $img_path = "no_img.jpg";
 
         $conn = new mysqli($server, $username, $password, $dbname);
 
         if ($conn->connect_error)
             die("Cannot connect to database. $conn->connect_error");
 
-        $stmt = $conn->prepare("INSERT INTO producto(nombre, precio, descripcion, id_pais) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sdsi", $name, $precio, $descripcion, $id_pais);
+        $stmt = $conn->prepare("INSERT INTO producto(nombre, precio, descripcion, img_path, id_pais) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sdssi", $name, $precio, $descripcion, $img_path, $id_pais);
 
         if ($stmt->execute()) {
             echo "<p style='color: mediumseagreen'>Producto agregado exitosamente</p>";
@@ -80,6 +81,7 @@ require "./config.php"
                 <th>Precio</th>
                 <th>Descripcion</th>
                 <th>Pais de origen</th>
+                <th>Categorías</th>
             </tr>
             </thead>
             <tbody>
@@ -88,17 +90,39 @@ require "./config.php"
             if ($conn->connect_error)
                 die("Cannot connect to database. $conn->connect_error");
 
-            $result = $conn->query("SELECT p.nombre, p.precio, p.descripcion, c.nombre pais FROM producto p INNER JOIN pais c ON p.id_pais = c.id");
+            $result = $conn->query("SELECT p.id, p.nombre, p.precio, p.descripcion, c.nombre pais FROM producto p INNER JOIN pais c ON p.id_pais = c.id");
 
             $products = $result->fetch_all(MYSQLI_ASSOC);
 
             foreach ($products as $product) {
+
+                $conn_cat = new mysqli($server, $username, $password, $dbname);
+                if ($conn_cat->connect_error)
+                    die("Cannot connect to database. $conn->connect_error");
+
+                $stmt = $conn_cat->prepare("SELECT ct.nombre FROM producto pd
+                        INNER JOIN producto_categoria pdct ON pd.id = pdct.id_producto
+                        INNER JOIN categoria ct ON pdct.id_categoria = ct.id
+                        WHERE pd.id = ?");
+                $stmt->bind_param("i", $product["id"]);
+                $stmt->execute();
+                $categories = $stmt->get_result();
+
                 echo "<tr>";
                 echo "<td>" . $product["nombre"] . "</td>";
                 echo "<td>" . $product["precio"] . "</td>";
                 echo "<td>" . $product["descripcion"] . "</td>";
                 echo "<td>" . $product["pais"] . "</td>";
+                echo "<td>";
+                foreach ($categories->fetch_all(MYSQLI_ASSOC) as $cat)
+                {
+                    echo "<span class='lbl-categoria'>" . $cat["nombre"] . "</span>";
+                }
+                echo "</td>";
                 echo "</tr>";
+
+                $stmt->close();
+                $conn_cat->close();
             }
 
             ?>
