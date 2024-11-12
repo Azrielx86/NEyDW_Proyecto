@@ -21,30 +21,20 @@
         <nav class="navbar">
             <div class="menu-1">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">USA</a></li>
-                    <li><a href="#">UK</a></li>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Perfil</a></li>
                 </ul>
             </div>
             <img class="logo-2" src="images/logo.webp"  alt="">
             <div class="menu-2">
                 <ul>
-                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Carrito</a></li>
                 </ul>
                 <div class="socials">
                     <a href="#">
                         <div class="social">
                             <img src="images/s1.svg" alt="">
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="social">
-                            <img src="images/s2.svg" alt="">
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="social">
-                            <img src="images/s3.svg" alt="">
                         </div>
                     </a>
                 </div>
@@ -60,18 +50,18 @@
                 <div class="swiper-slide">
                     <div class="slider">
                         <div class="slider-txt">
-                            <h1>Pizza</h1>
+                            <h1>Cheetos</h1>
                             <p>
-                                Rica pizza.
+                                Mexican street corn
                             </p>
                             <div class="botones">
-                                <a href="#" class="btn-1">Buy</a>
-                                <a href="#" class="btn-1">Menu</a>
+                                <a href="#" class="btn-1">Ver Más</a>
+                                <a href="#" class="btn-1">Comprar</a>
 
                             </div>
                         </div>
                         <div class="slider-img">
-                            <img src="images/slider1.webp" alt="">
+                            <img src="images/cheetosMexican.png" alt="">
 
                         </div>
                     </div>
@@ -79,18 +69,18 @@
                 <div class="swiper-slide">
                     <div class="slider">
                         <div class="slider-txt">
-                            <h1>Taco</h1>
+                            <h1>kernel Season's</h1>
                             <p>
-                                Hello
+                                Chessy jalapeño
                             </p>
                             <div class="botones">
+                                <a href="#" class="btn-1">Ver Más</a>
                                 <a href="#" class="btn-1">Comprar</a>
-                                <a href="#" class="btn-1">Menu</a>
 
                             </div>
                         </div>
                         <div class="slider-img">
-                            <img src="images/slider2.jpg" alt="">
+                            <img src="images/kernelSeasonsCheesyJalapeno.png" alt="">
 
                         </div>
                     </div>
@@ -98,18 +88,18 @@
                 <div class="swiper-slide">
                     <div class="slider">
                         <div class="slider-txt">
-                            <h1>Burger</h1>
+                            <h1>Teddy Grahams</h1>
                             <p>
-                                Hola
+                                Honey
                             </p>
                             <div class="botones">
+                                <a href="#" class="btn-1">Ver Más</a>
                                 <a href="#" class="btn-1">Comprar</a>
-                                <a href="#" class="btn-1">Menu</a>
 
                             </div>
                         </div>
                         <div class="slider-img">
-                            <img src="images/slider3.jpg" alt="">
+                            <img src="images/teddyGrahamsHoney.jpg" alt="">
 
                         </div>
                     </div>
@@ -130,7 +120,7 @@
     <div class="tabs container">
 
         <input type="radio" name="tabs" id="tab1" checked="checked" class="tabInput" value="1">
-        <label for="tab1">Colors</label>
+        <label for="tab1">Lo más nuevo</label>
         <div class="tab">
             <div class="swiper mySwiper-2" id="swiper1">
                 <div class="swiper-wrapper">
@@ -139,11 +129,11 @@
                         <div class="product">
                             <div class="product-img">
                                 <h4>New</h4>
-                                <img src="images/blue.webp" alt="">
+                                <img src="images/cheetosMexican.png" alt="">
                             </div>
                             <div class="product-txt">
-                                <h4>Blue</h4>
-                                <p>Color</p>
+                                <h4>Producto 1</h4>
+                                <p>Snack</p>
                                 <span class="price">$4.99</span>
                             </div>
                         </div>
@@ -153,11 +143,11 @@
                         <div class="product">
                             <div class="product-img">
                                 <h4>New</h4>
-                                <img src="images/black.webp" alt="">
+                                <img src="images/fantaPineapple.png" alt="">
                             </div>
                             <div class="product-txt">
-                                <h4>Black</h4>
-                                <p>Color</p>
+                                <h4>Producto 2</h4>
+                                <p>Soda</p>
                                 <span class="price">$4.99</span>
                             </div>
                         </div>
@@ -167,11 +157,11 @@
                         <div class="product">
                             <div class="product-img">
                                 <h4>New</h4>
-                                <img src="images/white.webp" alt="">
+                                <img src="images/cheetosJalapeno.png" alt="">
                             </div>
                             <div class="product-txt">
-                                <h4>White</h4>
-                                <p>Color</p>
+                                <h4>Producto 3</h4>
+                                <p>Snack</p>
                                 <span class="price">$4.99</span>
                             </div>
                         </div>
@@ -181,11 +171,11 @@
                         <div class="product">
                             <div class="product-img">
                                 <h4>New</h4>
-                                <img src="images/orange.webp" alt="">
+                                <img src="images/kernelSeasonsChileLimon.png" alt="">
                             </div>
                             <div class="product-txt">
-                                <h4>Orange</h4>
-                                <p>Color</p>
+                                <h4>Producto 4</h4>
+                                <p>Snack</p>
                                 <span class="price">$4.99</span>
                             </div>
                         </div>
@@ -195,67 +185,12 @@
                         <div class="product">
                             <div class="product-img">
                                 <h4>New</h4>
-                                <img src="images/purple.webp" alt="">
+                                <img src="images/kernelSeasonsRanch.png" alt="">
                             </div>
                             <div class="product-txt">
-                                <h4>Purple</h4>
-                                <p>Color</p>
+                                <h4>Producto 5</h4>
+                                <p>Snack</p>
                                 <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-
-        <input type="radio" name="tabs" id="tab2" checked="checked" class="tabInput" value="2">
-        <label for="tab2">Burger</label>
-        <div class="tab">
-            <div class="swiper mySwiper-2" id="swiper2">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/burger.webp" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Burger</h4>
-                                <p>Fish</p>
-                                <span class="price">$22.99</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/tacos.webp" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Tacos</h4>
-                                <p>3 order</p>
-                                <span class="price">$13.99</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/tacos.webp" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Tacos</h4>
-                                <p>3 order</p>
-                                <span class="price">$13.99</span>
                             </div>
                         </div>
                     </div>
@@ -268,7 +203,7 @@
         </div>
 
         <input type="radio" name="tabs" id="tab3" checked="checked" class="tabInput" value="3">
-        <label for="tab3">Popcorn</label>
+        <label for="tab3">Proximamente</label>
         <div class="tab">
             <div class="swiper mySwiper-2" id="swiper3">
                 <div class="swiper-wrapper">
@@ -276,13 +211,13 @@
                     <div class="swiper-slide">
                         <div class="product">
                             <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/popcorn.webp" alt="">
+                                <h4>Nov 24</h4>
+                                <img src="images/teddyGrahamsHoney.jpg" alt="">
                             </div>
                             <div class="product-txt">
-                                <h4>Popcorn</h4>
-                                <p>Butter</p>
-                                <span class="price">$8.99</span>
+                                <h4>Producto 1</h4>
+                                <p>Snack</p>
+                                <span class="price">$4.99</span>
                             </div>
                         </div>
                     </div>
@@ -290,13 +225,13 @@
                     <div class="swiper-slide">
                         <div class="product">
                             <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/tacos.webp" alt="">
+                                <h4>Nov 30</h4>
+                                <img src="images/cocaColaVanilla.png" alt="">
                             </div>
                             <div class="product-txt">
-                                <h4>Tacos</h4>
-                                <p>3 order</p>
-                                <span class="price">$13.99</span>
+                                <h4>Producto 2</h4>
+                                <p>Soda</p>
+                                <span class="price">$4.99</span>
                             </div>
                         </div>
                     </div>
@@ -304,13 +239,13 @@
                     <div class="swiper-slide">
                         <div class="product">
                             <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/tacos.webp" alt="">
+                                <h4>Dic 4</h4>
+                                <img src="images/fantaStrawberry.png" alt="">
                             </div>
                             <div class="product-txt">
-                                <h4>Tacos</h4>
-                                <p>3 order</p>
-                                <span class="price">$13.99</span>
+                                <h4>Producto 3</h4>
+                                <p>Soda</p>
+                                <span class="price">$4.99</span>
                             </div>
                         </div>
                     </div>
@@ -328,14 +263,14 @@
 <section class="info container">
 
     <div class="info-img">
-        <img src="images/info.jpg" alt="">
+        <img src="images/kernelSeasonsRanch.png" alt="">
     </div>
     <div class="info-txt">
-        <h2>Informacion</h2>
+        <h2>Información</h2>
         <p>
             Pagina en proceso.
         </p>
-        <a href="#" class="btn-2">More info</a>
+        <a href="#" class="btn-2">Más Información</a>
 
     </div>
 
@@ -347,7 +282,7 @@
         <h2>Horario</h2>
         <div class="horario-txt">
             <div class="txt">
-                <h4>Direccion</h4>
+                <h4>Dirección</h4>
                 <p>
                     Av. Santa Fe 1989
                 </p>
@@ -420,34 +355,18 @@
         </ul>
     </div>
     <div class="links">
-        <h4>Lorem</h4>
-        <ul>
-            <li><a href="#">lorem</a></li>
-            <li><a href="#">lorem</a></li>
-            <li><a href="#">lorem</a></li>
-        </ul>
-    </div>
-    <div class="links">
-        <h4>Lorem</h4>
-        <ul>
-            <li><a href="#">lorem</a></li>
-            <li><a href="#">lorem</a></li>
-            <li><a href="#">lorem</a></li>
-        </ul>
-    </div>
-    <div class="links">
-        <h4>Lorem</h4>
+        <h4>Redes Sociales</h4>
         <div class="socials">
 
             <a href="#">
                 <div class="social">
-                    <img src="images/s1.svg" alt="">
+                    <img src="images/s3.svg" alt="">
                 </div>
             </a>
 
             <a href="#">
                 <div class="social">
-                    <img src="images/s2.svg" alt="">
+                    <img src="images/s3.svg" alt="">
                 </div>
             </a>
 
