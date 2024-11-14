@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +14,7 @@
 
     <div class="menu container">
         <img class="logo-1" src="images/logo.webp" alt="">
-        <input type="checkbox" id="menu" />
+        <input type="checkbox" id="menu">
         <label for="menu">
             <img src="images/menu.png" class="menu-icono" alt="">
         </label>
@@ -22,8 +22,8 @@
             <div class="menu-1">
                 <ul>
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Perfil</a></li>
+                    <li><a href="products.php">Productos</a></li>
+                    <li><a href="login.php">Perfil</a></li>
                 </ul>
             </div>
             <img class="logo-2" src="images/logo.webp"  alt="">
@@ -31,13 +31,6 @@
                 <ul>
                     <li><a href="#">Carrito</a></li>
                 </ul>
-                <div class="socials">
-                    <a href="#">
-                        <div class="social">
-                            <img src="images/s1.svg" alt="">
-                        </div>
-                    </a>
-                </div>
             </div>
         </nav>
     </div>
