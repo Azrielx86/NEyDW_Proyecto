@@ -23,13 +23,13 @@
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="products.php">Productos</a></li>
-                    <li><a href="login.php">Perfil</a></li>
                 </ul>
             </div>
             <img class="logo-2" src="images/logo.webp"  alt="">
             <div class="menu-2">
                 <ul>
-                    <li><a href="#">Carrito</a></li>
+                    <li><a href="car.php">Carrito</a></li>
+                    <li><a href="login.php">Perfil</a></li>
                 </ul>
             </div>
         </nav>
@@ -195,10 +195,10 @@
             </div>
         </div>
 
-        <input type="radio" name="tabs" id="tab3" checked="checked" class="tabInput" value="3">
-        <label for="tab3">Proximamente</label>
+        <input type="radio" name="tabs" id="tab2" checked="checked" class="tabInput" value="2">
+        <label for="tab2">Proximamente</label>
         <div class="tab">
-            <div class="swiper mySwiper-2" id="swiper3">
+            <div class="swiper mySwiper-2" id="swiper2">
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide">

@@ -5,26 +5,28 @@
     <title>Log in</title>
     <link rel="stylesheet" href="styleli.css">
 </head>
-<header>
-    <div class="menu container">
-        <nav class="navbar">
-            <div class="menu-1">
-                <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Perfil</a></li>
-                </ul>
-            </div>
-            <img class="logo-2" src="images/logo.webp"  alt="">
-            <div class="menu-2">
-                <ul>
-                    <li><a href="#">Carrito</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
 <body>
+
+    <header>
+        <div class="menu container">
+            <nav class="navbar">
+                <div class="menu-1">
+                    <ul>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="products.php">Productos</a></li>
+                    </ul>
+                </div>
+                <img class="logo-2" src="images/logo.webp"  alt="">
+                <div class="menu-2">
+                    <ul>
+                        <li><a href="car.php">Carrito</a></li>
+                        <li><a href="#">Perfil</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
     <body>
         <div class="login">
             <div class="login-screen">
