@@ -576,8 +576,9 @@ body {
 span.lbl-categoria {
     background-color: #60C3CE;
     margin: 0.1rem;
-    padding: 0.2rem;
+    padding: 0.3rem;
     border-radius: 15px;
+    color: #444444;
 }
 
 td {
