@@ -79,7 +79,7 @@ $dbname = "eq10_tienda_importados";
     <div id="products-list">
         <p class="products-list-title">Productos por agregar</p>
     </div>
-    <a href="#" class="btn-3">Ir al carrito</a>
+    <button onclick="goToPurchase()" class="btn-3">Ir al carrito</button>
 </div>
 
 </body>
@@ -141,6 +141,18 @@ $dbname = "eq10_tienda_importados";
         } else {
             console.warn("This product is not in the list.");
         }
+    }
+
+    const goToPurchase = () => {
+        const data = products.map(p => {
+                return {
+                    id: p.product.id,
+                    quantity: p.quantity
+                }
+            }
+        );
+        const json = JSON.stringify(data);
+        window.location.href = `${BASE_URL}/car.php?purchase=${btoa(json)}`;
     }
 </script>
 </html>
