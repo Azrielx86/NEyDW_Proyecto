@@ -732,3 +732,50 @@ td {
 th {
     border: black 1px solid;
 }
+
+div.products-list-container {
+    background-color: #c9fcff;
+    margin: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    z-index: 50;
+    box-shadow: #444444 0 0 0.4rem;
+}
+
+div.products-list-item {
+    text-align: left !important;
+    display: flex;
+    padding: 0.2rem;
+}
+
+div.products-list-item > img {
+    display: block;
+    max-width: 2rem;
+}
+
+p.products-list-title {
+    font-weight: bold;
+    font-size: larger;
+}
+
+div.products-list {
+    margin: 0.3rem;
+}
+
+.btn-remove {
+    display: inline-block;
+    background-color: #74bbc0;
+    padding: 0.2rem 0.7rem;
+    color: #000000;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+}
+
+.btn-remove:hover {
+    background-color: #54AAB4;
+}

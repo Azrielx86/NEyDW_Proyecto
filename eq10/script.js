@@ -1,3 +1,5 @@
+const BASE_URL = 'http://localhost/NEyDW_Proyecto/eq10'
+
 var swiper = new Swiper(".mySwiper-1", {
     slidesPerView:1,
     spaceBetween: 30,
