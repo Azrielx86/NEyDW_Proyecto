@@ -417,6 +417,149 @@ body {
     display: inline-block;
 }
 
+.container1 {
+    max-width: 1200px;
+    margin: 200px auto;
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+.profile-sidebar {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.profile-picture p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #3C7A80;
+}
+
+.profile-picture input {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.activity {
+    margin-top: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #54AAB4;
+}
+
+.activity ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.activity ul li {
+    margin: 5px 0;
+}
+
+.profile-form {
+    flex: 2;
+}
+
+.profile-form h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #54AAB4;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #6DDBE8;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: #54AAB4;
+    outline: none;
+    box-shadow: 0 0 5px #3C7A80;
+}
+
+.form-actions {
+    text-align: right;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #60C3CE;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #54AAB4;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
 @media(max-width: 991px) {
 
     .menu {
