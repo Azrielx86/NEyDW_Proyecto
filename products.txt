@@ -1,0 +1,197 @@
+cheetosCrunchy.png
+Cheetos Crunchy
+Cheese 8.5 oz
+5.99
+Snack
+
+cheetosFlaminHot.png
+Cheetos Flamin' Hot Crunchy
+Flamin' Hot 8.5 oz
+5.99
+Snack
+
+cheetosFlaminHotLimon.png
+Cheetos Flamin' Hot Limon Crunchy
+Flamin' Hot Limon 8.5 oz
+5.99
+Snack
+
+cheetosXxtraFlaminHot.png
+Cheetos Xxtra Flamin' Hot Crunchy
+Xxtra Flamin' Hot 8.5 oz
+5.99
+Snack
+
+cheetosJalapeno.png
+Cheetos Cheddar Jalapeño Crunchy
+Jalapeño 8.5 oz
+5.99
+Snack
+
+cheetosMexican.png
+Cheetos Mexican Street Corn
+Mexican Street Corn 8.5 oz
+5.99
+Snack
+
+doritosSpicySweetChili.png
+Doritos Spicy Sweet Chili
+Spicy Sweet Chili 8.5 oz
+6.99
+Snack
+
+doritosCoolRanch.png
+Doritos Cool Ranch
+Ranch 8.5 oz
+6.99
+Snack
+
+doritosSpicyNacho.png
+Doritos Spicy Nacho
+Spicy Nacho 8.5 oz
+6.99
+Snack
+
+doritosFlaminHot.png
+Doritos Flamin' Hot Nacho
+Flamin' Hot Nacho 8.5 oz
+6.99
+Snack
+
+doritosFlaminHotLimon.png
+Doritos Flamin' Hot Limon
+Flamin' Hot Limon 8.5 oz
+6.99
+Snack
+
+doritosBBQ.png
+Doritos Sweet & Tangy BBQ
+Sweet & Tangy BBQ 8.5 oz
+6.99
+Snack
+
+kernelSeasonsButter.png
+Kernel Season's Butter Popcorn Seasoning
+Butter Popcorn 2.85 oz
+4.99
+Snack, Popcorn
+
+kernelSeasonsCheesyCaramelCorn.png
+Kernel Season's Caramel Corn Popcorn Seasoning
+Caramel Corn Popcorn 2.85 oz
+4.99
+Snack, Popcorn
+
+kernelSeasonsCheesyJalapeno.png
+Kernel Season's Cheesy Jalapeño Popcorn Seasoning
+Cheesy Jalapeño Popcorn 2.85 oz
+4.99
+Snack, Popcorn
+
+kernelSeasonsChileLimon.png
+Kernel Season's Chile Limon Popcorn Seasoning
+Chile Limon Popcorn 2.85 oz
+4.99
+Snack, Popcorn
+
+kernelSeasonsNachoCheddar.png
+Kernel Season's Nacho Cheddar Popcorn Seasoning
+Nacho Cheddar Popcorn 2.85 oz
+4.99
+Snack, Popcorn
+
+kernelSeasonsRanch.png
+Kernel Season's Ranch Popcorn Seasoning
+Ranch Popcorn 2.85 oz
+4.99
+Snack, Popcorn
+
+teddyGrahamsChocolatey.jpg
+Teddy Grahams Chocolatey Chips
+Chocolate 10 oz
+20.99
+Snack, Cookie
+
+teddyGrahamsCinnamon.jpg
+Teddy Grahams Cinnamon
+Cinnamon 10 oz
+20.99
+Snack, Cookie
+
+teddyGrahamsCocoa.jpg
+Teddy Grahams Cocoa
+Cocoa 10 oz
+20.99
+Snack, Cookie
+
+teddyGrahamsHoney.jpg
+Teddy Grahams Honey
+Honey 10 oz
+20.99
+Snack, Cookie
+
+cocaColaCaffeineFree.png
+Caffeine-Free Coca-Cola
+Caffeine Free 12 oz
+1.49
+Soda
+
+cocaColaCaffeineFreeDiet.png
+Caffeine-Free Diet Coca-Cola
+Caffeine Free Diet 12 oz
+1.49
+Soda
+
+cocaColaCherry.png
+Coca-Cola Cherry
+Cherry 12 oz
+1.49
+Soda
+
+cocaColaCherryZero.png
+Coca-Cola Zero Cherry
+Zero Cherry 12 oz
+1.49
+Soda
+
+cocaColaVanilla.png
+Coca-Cola Vanilla
+Vanilla 12 oz
+1.49
+Soda
+
+cocaColaCherryZero.png
+Coca-Cola Vanilla Zero
+Vanilla Zero 12 oz
+1.49
+Soda
+
+fanta.png
+Fanta
+Orange 20 oz
+2.99
+Soda
+
+fantaZero.png
+Fanta Zero
+Orange Zero 20 oz
+2.99
+Soda
+
+fantaGrape.png
+Fanta Grape
+Grape 20 oz
+2.99
+Soda
+
+fantaPineapple.png
+Fanta Pineapple
+Pineapple 20 oz
+2.99
+Soda
+
+fantaStrawberry.png
+Fanta Strawberry
+Strawberry 20 oz
+2.99
+Soda
