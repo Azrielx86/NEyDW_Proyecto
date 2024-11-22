@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <?php
-$server = "localhost";
-$username = "root";
-$password = "test1234";
-$dbname = "eq10_tienda_importados";
+require "./config.php";
+global $server, $username, $password, $dbname;
 ?>
 <html lang="en">
 <head>
