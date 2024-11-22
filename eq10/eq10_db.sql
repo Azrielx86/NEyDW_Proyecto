@@ -18,12 +18,12 @@ CREATE TABLE IF NOT EXISTS categoria
 
 CREATE TABLE IF NOT EXISTS producto
 (
-    id          INT           NOT NULL AUTO_INCREMENT,
-    nombre      VARCHAR(128)  NOT NULL,
-    precio      DECIMAL(10,2)       NOT NULL,
-    descripcion VARCHAR(1024) NOT NULL,
-    img_path    VARCHAR(512)  NOT NULL,
-    id_pais     INT           NOT NULL,
+    id          INT            NOT NULL AUTO_INCREMENT,
+    nombre      VARCHAR(128)   NOT NULL,
+    precio      DECIMAL(10, 2) NOT NULL,
+    descripcion VARCHAR(1024)  NOT NULL,
+    img_path    VARCHAR(512)   NOT NULL,
+    id_pais     INT            NOT NULL,
     CONSTRAINT pk_producto PRIMARY KEY (id),
     CONSTRAINT fk_pais_producto FOREIGN KEY (id_pais) REFERENCES pais (id)
 );
@@ -129,7 +129,7 @@ INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (4, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais)
-VALUES (5, 'Cheetos Cheddar JalapeÃ±o Crunchy', 5.99, 'JalapeÃ±o 8.5 oz', 'cheetosJalapeno.png', 4);
+VALUES (5, 'Cheetos Cheddar JalapeÃ±o Crunchy', 5.99, 'Jalapeño 8.5 oz', 'cheetosJalapeno.png', 4);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (5, 1);
 
@@ -297,3 +297,5 @@ VALUES (33, 'Fanta Strawberry', 2.99, 'Strawberry 20 oz', 'fantaStrawberry.png',
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (33, 4);
 
+INSERT INTO cliente (nombre, telefono, correo, direccion)
+VALUES ('Edgar Chalico', '+52 55 1677 1012', 'edgarch@mail.com', 'SMX Tlalnepantla EDOMEX');
