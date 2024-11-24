@@ -1,5 +1,23 @@
 CREATE DATABASE IF NOT EXISTS eq10_tienda_importados;
 
+drop table if exists compra_cliente cascade;
+
+drop table if exists cliente cascade;
+
+drop table if exists compra_producto cascade;
+
+drop table if exists compra cascade;
+
+drop table if exists producto_categoria cascade;
+
+drop table if exists categoria cascade;
+
+drop table if exists producto cascade;
+
+drop table if exists pais cascade;
+
+drop table if exists tipo_pago cascade;
+
 CREATE TABLE IF NOT EXISTS pais
 (
     id     INT         NOT NULL AUTO_INCREMENT,
@@ -57,11 +75,10 @@ CREATE TABLE IF NOT EXISTS tipo_pago
 
 CREATE TABLE IF NOT EXISTS compra
 (
-    id           INT      NOT NULL AUTO_INCREMENT,
-    cantidad     INT      NOT NULL,
-    fecha        DATETIME NOT NULL,
-    total        DECIMAL  NOT NULL,
-    id_tipo_pago INT      NOT NULL,
+    id           INT            NOT NULL AUTO_INCREMENT,
+    fecha        DATETIME       NOT NULL,
+    total        DECIMAL(10, 2) NOT NULL,
+    id_tipo_pago INT            NOT NULL,
     CONSTRAINT pk_compra PRIMARY KEY (id),
     CONSTRAINT fk_compra_pago FOREIGN KEY (id_tipo_pago) REFERENCES tipo_pago (id)
 );
@@ -70,6 +87,7 @@ CREATE TABLE IF NOT EXISTS compra_producto
 (
     id_compra   INT NOT NULL,
     id_producto INT NOT NULL,
+    cantidad    INT NOT NULL DEFAULT 1,
     CONSTRAINT pk_compra_producto PRIMARY KEY (id_compra, id_producto),
     CONSTRAINT fk_comp_prod_compra FOREIGN KEY (id_compra) REFERENCES compra (id),
     CONSTRAINT fk_comp_prod_producto FOREIGN KEY (id_producto) REFERENCES producto (id)
@@ -297,5 +315,59 @@ VALUES (33, 'Fanta Strawberry', 2.99, 'Strawberry 20 oz', 'fantaStrawberry.png',
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (33, 4);
 
-INSERT INTO cliente (nombre, telefono, correo, direccion)
-VALUES ('Edgar Chalico', '+52 55 1677 1012', 'edgarch@mail.com', 'SMX Tlalnepantla EDOMEX');
+# Usuarios
+
+INSERT INTO cliente (id, nombre, telefono, correo, direccion)
+VALUES (1, 'Edgar Chalico', '+52 55 1677 1012', 'edgarch@mail.com', 'SMX Tlalnepantla EDOMEX');
+
+# Compras
+INSERT INTO tipo_pago (tipo)
+VALUES ('Debito');
+
+INSERT INTO tipo_pago (tipo)
+VALUES ('Crédito');
+
+/*
+ * Prueba 1: Compra de dos productos
+ */
+INSERT INTO compra (fecha, total, id_tipo_pago)
+VALUES ('2021-10-01 12:00:00', 2.98, 1);
+
+INSERT INTO compra_producto (id_compra, id_producto)
+VALUES (1, 26);
+
+INSERT INTO compra_producto (id_compra, id_producto)
+VALUES (1, 27);
+
+INSERT INTO compra_cliente (id_cliente, id_compra)
+VALUES (1, 1);
+
+/*
+ * Prueba 2: Compra de tres productos
+ */
+INSERT INTO compra (fecha, total, id_tipo_pago)
+VALUES ('2021-10-02 12:00:00', 3.47, 2);
+
+INSERT INTO compra_producto (id_compra, id_producto, cantidad)
+VALUES (2, 29, 2);
+
+INSERT INTO compra_producto (id_compra, id_producto)
+VALUES (2, 30);
+
+INSERT INTO compra_cliente (id_cliente, id_compra)
+VALUES (1, 2);
+
+/*
+ * Ejemplos de uso.
+ *
+ * Obtener compras.
+ * SELECT cliente.nombre, compra.fecha, compra.total FROM compra
+ * INNER JOIN compra_cliente ON compra.id = compra_cliente.id_compra
+ * INNER JOIN cliente ON compra_cliente.id_cliente = cliente.id;
+ *
+ * Obtener productos de una compra.
+ * SELECT producto.nombre, producto.precio, compra_producto.cantidad FROM compra
+ * INNER JOIN compra_producto ON compra.id = compra_producto.id_compra
+ * INNER JOIN producto ON compra_producto.id_producto = producto.id
+ * WHERE compra.id = 2;
+ */
