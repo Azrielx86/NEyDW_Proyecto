@@ -123,6 +123,15 @@ CREATE TRIGGER IF NOT EXISTS before_insert_cliente
     FOR EACH ROW
 BEGIN
     DECLARE hashed_pwd CHAR(64);
+    IF NEW.nombre = '' THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Nombre cannot be empty';
+    END IF;
+    IF NEW.password = '' THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Password cannot be empty';
+    END IF;
+    IF NEW.correo = '' THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Correo cannot be empty';
+    END IF;
     CALL hash_password(NEW.password, hashed_pwd);
     SET NEW.password = hashed_pwd;
 END;
