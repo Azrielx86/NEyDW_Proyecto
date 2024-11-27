@@ -372,7 +372,7 @@
         </div>
     </div>
     <div>
-        <a href="add_product_page.php">Test agregado de productos</a>
+        <a href="add_products.php">Test agregado de productos</a>
     </div>
 </footer>
 

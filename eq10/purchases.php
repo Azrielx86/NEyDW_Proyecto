@@ -60,12 +60,76 @@ function getPurchaseInfo($purchaseId)
     return json_encode(["error" => "Incorrect Request"]);
 }
 
-if (isset($_GET["client_id"])) {
-    define("client_id", $_GET["client_id"]);
-    echo getClientShopHistory(client_id);
-} else if (isset($_GET["purchase_id"])) {
-    define("purchase_id", $_GET["purchase_id"]);
-    echo getPurchaseInfo(purchase_id);
-} else {
-    return json_encode(["error" => "Invalid request"]);
+function doPurchase($productsString, $userId)
+{
+    global $server, $username, $password, $dbname;
+    if ($productsString) {
+        $b64 = base64_decode($productsString);
+        $json = json_decode($b64);
+
+        $conn = new mysqli($server, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            return json_encode(["error" => "Cannot connect to database. " . $conn->connect_error]);
+        }
+
+        $total = 0;
+        foreach ($json as $product) {
+            $stmt = $conn->prepare("SELECT precio FROM producto WHERE id = ?");
+            $stmt->bind_param("i", $product->id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            $row = $result->fetch_assoc();
+            $total += $row['precio'];
+
+            $stmt->close();
+        }
+
+        $stmt = $conn->prepare("INSERT INTO compra(fecha, total, id_tipo_pago) VALUES (?, ?, 1)");
+        date_default_timezone_set('America/Mexico_City');
+        $fecha = date('Y-m-d H:i:s');
+        $stmt->bind_param("si", $fecha, $total);
+        $stmt->execute();
+        $id_compra = $stmt->insert_id;
+        $stmt->close();
+
+        foreach ($json as $product) {
+            $stmt = $conn->prepare("INSERT INTO compra_producto(id_compra, id_producto) VALUES (?, ?)");
+            $stmt->bind_param("ii", $id_compra, $product->id);
+            $stmt->execute();
+            $stmt->close();
+        }
+
+        $stmt = $conn->prepare("INSERT INTO compra_cliente(id_cliente, id_compra) VALUES (?, ?)");
+        $stmt->bind_param("ii", $userId, $id_compra);
+        $stmt->execute();
+        $id_compra = $stmt->insert_id;
+
+        $stmt->close();
+        return json_encode(["done" => "Compra realizada: $id_compra"]);
+    }
+    return json_encode(["error" => "Incorrect Request"]);
 }
+
+switch ($_SERVER['REQUEST_METHOD']) {
+    case 'GET':
+        if (isset($_GET["client_id"])) {
+            define("client_id", $_GET["client_id"]);
+            echo getClientShopHistory(client_id);
+        } else if (isset($_GET["purchase_id"])) {
+            define("purchase_id", $_GET["purchase_id"]);
+            echo getPurchaseInfo(purchase_id);
+        } else {
+            return json_encode(["error" => "Invalid request"]);
+        }
+        break;
+    case 'POST':
+        if (isset($_POST["products"]) && isset($_POST["client_id"])) {
+            define("products", $_POST["products"]);
+            define("client_id", $_POST["client_id"]);
+            echo doPurchase(products, client_id);
+        } else {
+            return json_encode(["error" => "Invalid request"]);
+        }
+}
+

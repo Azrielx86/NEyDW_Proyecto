@@ -9,6 +9,7 @@ global $server, $username, $password, $dbname;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -68,7 +69,7 @@ global $server, $username, $password, $dbname;
                 }
 
                 echo '<div><h1>Precio total: $' . $total_price . '</h1></div>';
-                echo '<button class="btn-3" onclick="placeOrder()">Realizar compra</button>';
+                echo '<button id="btn-compra" class="btn-3" onclick="placeOrder()">Realizar compra</button>';
                 $conn->close();
             } else {
                 echo '<h2>No hay productos por comprar</h2>';
@@ -81,9 +82,17 @@ global $server, $username, $password, $dbname;
 </div>
 
 </body>
+<script src="script.js"></script>
 <script>
     const placeOrder = () => {
-        alert("Coming soon... :P");
+        const productsEncoded = "<?php echo $_GET["purchase"]?>"
+        const clientId = localStorage.getItem("client_id");
+
+        $.post(`${BASE_URL}/purchases.php`, {products: productsEncoded, client_id: clientId}, (response) => {
+            console.log(JSON.parse(response));
+            $("#btn-compra").prop("disabled", true);
+        });
+        window.location.href = `${BASE_URL}/profile.php`;
     }
 </script>
 </html>

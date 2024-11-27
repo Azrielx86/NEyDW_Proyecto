@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS producto
     descripcion VARCHAR(1024)  NOT NULL,
     img_path    VARCHAR(512)   NOT NULL,
     id_pais     INT            NOT NULL,
+    popularity  INT(3) DEFAULT 0,
     CONSTRAINT pk_producto PRIMARY KEY (id),
     CONSTRAINT fk_pais_producto FOREIGN KEY (id_pais) REFERENCES pais (id)
 );
@@ -60,7 +61,7 @@ CREATE TABLE IF NOT EXISTS cliente
 (
     id        INT          NOT NULL AUTO_INCREMENT,
     nombre    VARCHAR(128) NOT NULL,
-    apellidos  VARCHAR(128) NOT NULL,
+    apellidos VARCHAR(128) NOT NULL,
     telefono  VARCHAR(16)  NOT NULL DEFAULT '',
     correo    VARCHAR(64)  NOT NULL,
     password  CHAR(64)     NOT NULL,
@@ -383,7 +384,7 @@ VALUES (1, 1);
  * Prueba 2: Compra de tres productos
  */
 INSERT INTO compra (fecha, total, id_tipo_pago)
-VALUES ('2021-10-02 12:00:00', 3.47, 2);
+VALUES ('2021-10-02 12:00:00', 8.97, 2);
 
 INSERT INTO compra_producto (id_compra, id_producto, cantidad)
 VALUES (2, 29, 2);
