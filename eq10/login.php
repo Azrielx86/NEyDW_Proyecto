@@ -3,8 +3,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
-    <link rel="stylesheet" href="styleli.css">
+    <!--    <link rel="stylesheet" href="styleli.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #DCF6F9;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login {
+            /*margin: 0 auto;*/
+            width: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .login-screen {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px
+        }
+
+        .app-title {
+            text-align: center;
+            color: #777;
+        }
+
+        .login-form {
+            text-align: center;
+        }
+
+        .control-group {
+            margin-bottom: 10px;
+        }
+
+        input {
+            text-align: center;
+            background-color: #ECF0F1;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 200;
+            padding: 10px 0;
+            width: 250px;
+            transition: border .5s;
+        }
+
+        input:focus {
+            border: 2px solid #6DDBE8;
+            box-shadow: none;
+        }
+
+        .btn {
+            border: 2px solid transparent;
+            background: #6DDBE8;
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 25px;
+            padding: 10px 0;
+            text-decoration: none;
+            text-shadow: none;
+            border-radius: 10px;
+            box-shadow: none;
+            transition: 0.25s;
+            display: block;
+            width: 250px;
+            margin: 0 auto;
+        }
+
+        .btn:hover {
+            background-color: #60C3CE;
+        }
+
+        .login-link {
+            font-size: 12px;
+            color: #444;
+            display: block;
+            margin-top: 12px;
+        }
+
+        .logo-2 {
+            width: 150px;
+        }
+
+        .menu-2 {
+            margin-left: 180px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+        }
+
+        .menu-1 {
+            margin-right: 180px;
+        }
+
+        .header-content {
+            margin-top: 200px;
+            padding-bottom: 50px;
+        }
+
+        .menu .navbar ul li {
+            position: relative;
+            float: left;
+        }
+
+        .menu .navbar ul li a {
+            font-size: 18px;
+            padding: 20px;
+            color: #3C7A80;
+            display: block;
+        }
+
+        .menu .navbar ul li a:hover {
+            color: #60C3CE;
+        }
+    </style>
 </head>
 <body>
 
