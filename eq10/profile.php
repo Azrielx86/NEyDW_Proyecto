@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<header>
+<header style="margin-bottom: 8rem">
     <div class="menu container">
         <nav class="navbar">
             <div class="menu-1">
@@ -43,9 +43,8 @@
             <div class="activity">
                 <h4>Actividad</h4>
                 <ul>
-                    <li>Compras: <span>2</span></li>
-                    <li>Pendientes: <span>4</span></li>
-
+                    <li>Compras: <span id="compras_count">0</span></li>
+                    <!--                    <li>Pendientes: <span>4</span></li>-->
                 </ul>
             </div>
         </aside>
@@ -114,15 +113,71 @@
         </section>
     </div>
 </div>
+<div class="container2">
+    <h4>Compras recientes</h4>
+    <div id="purchase-list">
+        Obteniendo compras...
+    </div>
+</div>
 </body>
 <script src="script.js"></script>
 <script>
-    $(document).ready(() => {
+    $(document).ready(async () => {
         let id = localStorage.getItem("client_id");
-        if (id) {
-            console.log("User is logged in.");
-        } else {
+        if (!id) {
             window.location.href = `${BASE_URL}`
+            console.log("User is logged in.");
+        }
+
+        let client_request = await fetch(`${BASE_URL}/users.php?id=${id}`);
+        let client = await client_request.json();
+
+        let purchases_request = await fetch(`${BASE_URL}/purchases.php?client_id=${id}`);
+        let purchases = await purchases_request.json();
+
+        $("#nombre").val(client.nombre);
+        $("#apellidos").val(client.apellidos);
+        $("#email").val(client.correo);
+        $("#movil").val(client.telefono);
+        $("#compras_count").html(purchases.length);
+
+        if (purchases.length > 0) {
+            $("#purchase-list").html(await Promise.all(purchases.map(async (purchase) => {
+                const products_request = await fetch(`${BASE_URL}/purchases.php?purchase_id=${purchase.id}`);
+                const products = await products_request.json();
+                return `
+                <div class="purchase-item">
+                    <p class="purchase-item-date">${purchase.fecha}</p>
+                    <div class="purchase-items-list">
+                        <div class="purchase-items-table">
+                            <table>
+                                <thead>
+                                    <tr style="border: none">
+                                        <th style="border: none" >Producto</th>
+                                        <th style="border: none" >Precio Unitario</th>
+                                        <th style="border: none" >Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                ${products.map(product => `
+                                    <tr>
+                                        <td>${product.nombre}</td>
+                                        <td>$${product.precio}</td>
+                                        <td>${product.cantidad}</td>
+                                    </tr>
+                                `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="purchase-item-info">
+                        <p class="purchase-item-payment">Tipo de Pago: ${purchase.pago}</p>
+                        <p class="purchase-item-total">Total: $${purchase.total}</p>
+                    </div>
+                </div>`;
+            })).then(html => html.join("")));
+        } else {
+            $("#purchase-list").html("No hay compras registradas");
         }
     });
 

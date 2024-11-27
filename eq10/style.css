@@ -21,6 +21,7 @@ body {
 .swiper-button-prev::after {
     font-size: 25px;
 }
+
 .swiper-button-next::after {
     font-size: 25px;
 }
@@ -28,6 +29,7 @@ body {
 .swiper-button-next {
     color: #60C3CE;
 }
+
 .swiper-button-prev {
     color: #60C3CE;
 }
@@ -419,7 +421,7 @@ body {
 
 .container1 {
     max-width: 1200px;
-    margin: 200px auto;
+    margin: 2rem auto;
     padding: 20px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -560,7 +562,7 @@ body {
     background-color: #c82333;
 }
 
-@media(max-width: 991px) {
+@media (max-width: 991px) {
 
     .menu {
         display: none;
@@ -778,4 +780,91 @@ div.products-list {
 
 .btn-remove:hover {
     background-color: #54AAB4;
+}
+
+/* Listado de productos */
+
+div.container2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+div.purchase-item {
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+p.purchase-item-date {
+    font-weight: bolder;
+}
+
+div.purchase-items-list {
+    align-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+div.purchase-items-table {
+    display: inline-block;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 0;
+    border-radius: 8px;
+}
+
+div.purchase-items-table > table {
+    table-layout: fixed;
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+}
+
+div.purchase-items-table > table > thead tr {
+    background-color: #a3e5e3;
+    color: #000000;
+    border: none !important;
+}
+
+div.purchase-items-table > table > th, td {
+    padding: 12px 15px;
+    border: none !important;
+}
+
+div.purchase-items-table > table > tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+div.purchase-items-table > table > tbody tr:last-of-type {
+    border-bottom: 2px solid #a3e5e3;
+}
+
+div.purchase-items-table > table > tbody tr:nth-last-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/*div.purchase-items-table > table > th, td {}*/
+
+div.purchase-item-info {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+p.purchase-item-total {
+    font-weight: bold;
 }

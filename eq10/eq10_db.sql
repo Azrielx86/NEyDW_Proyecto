@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS cliente
 (
     id        INT          NOT NULL AUTO_INCREMENT,
     nombre    VARCHAR(128) NOT NULL,
+    apellidos  VARCHAR(128) NOT NULL,
     telefono  VARCHAR(16)  NOT NULL DEFAULT '',
     correo    VARCHAR(64)  NOT NULL,
     password  CHAR(64)     NOT NULL,
@@ -350,8 +351,8 @@ VALUES (33, 4);
 
 # Usuarios
 
-INSERT INTO cliente (id, nombre, telefono, correo, password, direccion)
-VALUES (1, 'Edgar Chalico', '+52 55 1677 1012', 'edgarch@mail.com', 'test1234', 'SMX Tlalnepantla EDOMEX');
+INSERT INTO cliente (id, nombre, apellidos, telefono, correo, password, direccion)
+VALUES (1, 'Edgar', 'Chalico', '+52 55 1677 1012', 'edgarch@mail.com', 'test1234', 'SMX Tlalnepantla EDOMEX');
 
 # Compras
 INSERT INTO tipo_pago (tipo)
@@ -364,13 +365,16 @@ VALUES ('Crédito');
  * Prueba 1: Compra de dos productos
  */
 INSERT INTO compra (fecha, total, id_tipo_pago)
-VALUES ('2021-10-01 12:00:00', 2.98, 1);
+VALUES ('2021-10-01 12:00:00', 7.97, 1);
 
 INSERT INTO compra_producto (id_compra, id_producto)
 VALUES (1, 26);
 
 INSERT INTO compra_producto (id_compra, id_producto)
 VALUES (1, 27);
+
+INSERT INTO compra_producto (id_compra, id_producto)
+VALUES (1, 17);
 
 INSERT INTO compra_cliente (id_cliente, id_compra)
 VALUES (1, 1);
