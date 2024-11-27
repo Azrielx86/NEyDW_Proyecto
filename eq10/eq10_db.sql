@@ -108,12 +108,16 @@ CREATE TABLE IF NOT EXISTS compra_cliente
 DROP PROCEDURE IF EXISTS hash_password;
 DROP TRIGGER IF EXISTS before_insert_cliente;
 
-CREATE PROCEDURE hash_password(IN raw_password VARCHAR(64), OUT hashed_password CHAR(64))
+DELIMITER //
+CREATE PROCEDURE IF NOT EXISTS hash_password(IN raw_password VARCHAR(64), OUT hashed_password CHAR(64))
 BEGIN
     SET hashed_password = SHA2(raw_password, 256);
 END;
+//
+DELIMITER ;
 
-CREATE TRIGGER before_insert_cliente
+DELIMITER //
+CREATE TRIGGER IF NOT EXISTS before_insert_cliente
     BEFORE INSERT
     ON cliente
     FOR EACH ROW
@@ -122,6 +126,8 @@ BEGIN
     CALL hash_password(NEW.password, hashed_pwd);
     SET NEW.password = hashed_pwd;
 END;
+//
+DELIMITER ;
 
 /* ================================================= INSERTS ======================================================== */
 INSERT INTO pais (nombre)
