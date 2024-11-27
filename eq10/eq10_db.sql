@@ -182,7 +182,7 @@ INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (4, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais)
-VALUES (5, 'Cheetos Cheddar JalapeÃ±o Crunchy', 5.99, 'Jalapeño 8.5 oz', 'cheetosJalapeno.png', 4);
+VALUES (5, 'Cheetos Cheddar Jalapeño Crunchy', 5.99, 'Jalapeño 8.5 oz', 'cheetosJalapeno.png', 4);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (5, 1);
 
