@@ -60,9 +60,10 @@ CREATE TABLE IF NOT EXISTS cliente
 (
     id        INT          NOT NULL AUTO_INCREMENT,
     nombre    VARCHAR(128) NOT NULL,
-    telefono  VARCHAR(16)  NOT NULL,
+    telefono  VARCHAR(16)  NOT NULL DEFAULT '',
     correo    VARCHAR(64)  NOT NULL,
-    direccion VARCHAR(256) NOT NULL,
+    password  CHAR(64)     NOT NULL,
+    direccion VARCHAR(256) NOT NULL DEFAULT '',
     CONSTRAINT pk_id PRIMARY KEY (id)
 );
 
@@ -104,6 +105,23 @@ CREATE TABLE IF NOT EXISTS compra_cliente
     CONSTRAINT fk_cu_usuario FOREIGN KEY (id_cliente) REFERENCES cliente (id)
 );
 
+DROP PROCEDURE IF EXISTS hash_password;
+DROP TRIGGER IF EXISTS before_insert_cliente;
+
+CREATE PROCEDURE hash_password(IN raw_password VARCHAR(64), OUT hashed_password CHAR(64))
+BEGIN
+    SET hashed_password = SHA2(raw_password, 256);
+END;
+
+CREATE TRIGGER before_insert_cliente
+    BEFORE INSERT
+    ON cliente
+    FOR EACH ROW
+BEGIN
+    DECLARE hashed_pwd CHAR(64);
+    CALL hash_password(NEW.password, hashed_pwd);
+    SET NEW.password = hashed_pwd;
+END;
 
 /* ================================================= INSERTS ======================================================== */
 INSERT INTO pais (nombre)
@@ -317,8 +335,8 @@ VALUES (33, 4);
 
 # Usuarios
 
-INSERT INTO cliente (id, nombre, telefono, correo, direccion)
-VALUES (1, 'Edgar Chalico', '+52 55 1677 1012', 'edgarch@mail.com', 'SMX Tlalnepantla EDOMEX');
+INSERT INTO cliente (id, nombre, telefono, correo, password, direccion)
+VALUES (1, 'Edgar Chalico', '+52 55 1677 1012', 'edgarch@mail.com', 'test1234', 'SMX Tlalnepantla EDOMEX');
 
 # Compras
 INSERT INTO tipo_pago (tipo)

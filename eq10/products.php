@@ -51,7 +51,7 @@ global $server, $username, $password, $dbname;
 
         echo '<div class="product">';
         echo '<div class="product-img1">';
-        echo '<img src="images/' . $product["img_path"] . '" alt="">';
+        echo '<img src="images/' . $product["img_path"] . '" alt="" onerror="this.src=\'images/s1.svg\'">';
         echo '</div>';
         echo '<div class="product-txt">';
         echo '<h4>' . $product["nombre"] . '</h4>';

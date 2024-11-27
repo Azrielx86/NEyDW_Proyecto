@@ -28,16 +28,20 @@
     </div>
 </header>
 
-<!--    <body>-->
 <div class="login">
     <div class="login-screen">
         <div class="app-title">
-            <h1>Chalico's Store</h1>
+            <!--            <h1>Chalico's Store</h1>-->
         </div>
 
         <div class="login-form">
+            <div style="display: none" id="input-nombre" class="control-group">
+                <input type="text" class="login-field" value="" placeholder="Nombre de usuario" id="username">
+                <label class="login-field-icon fui-user" for="username"></label>
+            </div>
+
             <div class="control-group">
-                <input type="text" class="login-field" value="" placeholder="Nombre de usuario" id="email">
+                <input type="text" class="login-field" value="" placeholder="Email" id="email">
                 <label class="login-field-icon fui-user" for="email"></label>
             </div>
 
@@ -46,13 +50,17 @@
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
             </div>
 
-            <button class="btn btn-primary btn-large btn-block" onclick="login()">Iniciar sesión</button>
+            <button id="btn-login" class="btn btn-primary btn-large btn-block">Iniciar sesión</button>
             <a class="login-link" href="#">¿Olvidaste tu contraseña?</a>
+            <button
+                    id="btn-mode"
+                    style="border: none; margin: 0.5rem auto; padding: 0.5rem"
+                    onclick="changeView()">Regístrate
+            </button>
             <div id="error-report"></div>
         </div>
     </div>
 </div>
-<!--    </body>-->
 </body>
 <script src="script.js"></script>
 <script>
@@ -61,18 +69,23 @@
         if (id) {
             window.location.href = `${BASE_URL}/profile.php`
         }
+
+        $("#btn-login").on("click", login);
     });
 
     const login = async () => {
-        let email = document.getElementById("email").value;
+        // let email = document.getElementById("email").value;
+        //
+        // let pwd = document.getElementById("login-pass").value;
+        //
+        // if (!pwd || pwd.trim() === "")
+        //     console.log("Igual no requiere contraseña... en cualquier otra cosa sería fácil implementarlo, aquí... me ahorro mis comentarios.");
 
-        let pwd = document.getElementById("login-pass").value;
+        let email = $("#email").val().trim();
+        let password = $("#login-pass").val().trim();
 
-        if (!pwd || pwd.trim() === "")
-            console.log("Igual no requiere contraseña... en cualquier otra cosa sería fácil implementarlo, aquí... me ahorro mis comentarios.");
-
-        if (email && email.trim() !== "") {
-            let response = await fetch(`${BASE_URL}/users.php?email=${email.trim()}`);
+        if (email && password) {
+            let response = await fetch(`${BASE_URL}/users.php?email=${email}&pwd=${password}`);
             let json = await response.json();
 
             if (json !== null && json.id) {
@@ -88,6 +101,38 @@
             let errorReport = document.getElementById("error-report");
             errorReport.innerHTML = `<div><p>Email required.</p></div>`;
         }
+    }
+
+    const register = () => {
+        let username = $("#username").val().trim();
+        let email = $("#email").val().trim();
+        let pwd = $("#login-pass").val().trim();
+
+        if (!username || !email || !pwd) {
+            console.error("Invalid values in the form");
+        }
+
+        $.post(`${BASE_URL}/register.php`, {email, username, pwd}, (response) => {
+            let json = JSON.parse(response);
+            if (json.error) {
+                console.error(json.error);
+                let errorReport = document.getElementById("error-report");
+                errorReport.innerHTML = `<div><p>${json.error}</p></div>`;
+            } else {
+                console.log("Client registered successfully");
+                localStorage.setItem("client_id", json.id);
+                window.location.href = `${BASE_URL}/profile.php`;
+            }
+        });
+    }
+
+    const changeView = () => {
+        $("#input-nombre").css("display", "block");
+        $("#btn-mode").css("display", "none");
+        $("#btn-login")
+            .html("Registrarte")
+            .unbind("click")
+            .on("click", register);
     }
 </script>
 </html>            

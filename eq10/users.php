@@ -1,7 +1,7 @@
 <?php
 require "./config.php";
 
-function getClient($clientMail)
+function getClient($email, $password)
 {
     global $server, $username, $password, $dbname;
 
@@ -11,8 +11,10 @@ function getClient($clientMail)
             return json_encode(["error" => "Cannot connect to database. " . $conn->connect_error]);
         }
 
-        $stmt = $conn->prepare("SELECT id FROM cliente WHERE correo = ?");
-        $stmt->bind_param("s", $clientMail);
+        $hashed = hash('sha256', $password);
+
+        $stmt = $conn->prepare("SELECT id FROM cliente WHERE correo = ? AND password = ?");
+        $stmt->bind_param("ss", $email, $hashed);
         $stmt->execute();
         $result = $stmt->get_result();
         $client = $result->fetch_assoc();
@@ -26,5 +28,6 @@ function getClient($clientMail)
 }
 
 define("client_email", $_GET["email"]);
+define("client_password", $_GET["pwd"]);
 
-echo getClient(client_email);
+echo getClient(client_email, client_password);
