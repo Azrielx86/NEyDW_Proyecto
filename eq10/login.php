@@ -112,7 +112,7 @@
             console.error("Invalid values in the form");
         }
 
-        $.post(`${BASE_URL}/register.php`, {email, username, pwd}, (response) => {
+        $.post(`${BASE_URL}/users.php`, {email, username, pwd}, (response) => {
             let json = JSON.parse(response);
             if (json.error) {
                 console.error(json.error);

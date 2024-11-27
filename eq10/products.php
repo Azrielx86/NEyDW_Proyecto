@@ -9,6 +9,7 @@ global $server, $username, $password, $dbname;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -75,9 +76,9 @@ global $server, $username, $password, $dbname;
 
 <div class="products-list-container">
     <div id="products-list">
-        <p class="products-list-title">Productos por agregar</p>
+        <p id="car-title" class="products-list-title">Productos por agregar</p>
     </div>
-    <button onclick="goToPurchase()" class="btn-3">Ir al carrito</button>
+    <button id="btn-goto-car" onclick="goToPurchase()" class="btn-3">Ir al carrito</button>
 </div>
 
 </body>
@@ -85,7 +86,19 @@ global $server, $username, $password, $dbname;
 <script>
     let products = []
 
+    $(document).ready(() => {
+        let id = localStorage.getItem("client_id");
+        if (!id) {
+            console.log("User is not logged in.");
+            $("#car-title").html("Necesitas iniciar sesión para comprar");
+            $("#btn-goto-car").hide();
+        }
+    });
+
     const addProduct = (product_id) => {
+        let id = localStorage.getItem("client_id");
+        if (!id) return;
+
         console.log(`Finding product ${product_id}`);
 
         fetch(`${BASE_URL}/get_product.php?id=${product_id}`)
