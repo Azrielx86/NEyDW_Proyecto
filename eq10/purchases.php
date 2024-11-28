@@ -80,7 +80,7 @@ function doPurchase($productsString, $userId)
             $result = $stmt->get_result();
 
             $row = $result->fetch_assoc();
-            $total += $row['precio'];
+            $total += $row['precio'] * $product->quantity;
 
             $stmt->close();
         }
@@ -94,8 +94,8 @@ function doPurchase($productsString, $userId)
         $stmt->close();
 
         foreach ($json as $product) {
-            $stmt = $conn->prepare("INSERT INTO compra_producto(id_compra, id_producto) VALUES (?, ?)");
-            $stmt->bind_param("ii", $id_compra, $product->id);
+            $stmt = $conn->prepare("INSERT INTO compra_producto(id_compra, id_producto, cantidad) VALUES (?, ?, ?)");
+            $stmt->bind_param("iii", $id_compra, $product->id, $product->quantity);
             $stmt->execute();
             $stmt->close();
         }

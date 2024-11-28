@@ -152,14 +152,11 @@ END;
 DELIMITER ;
 
 /* ================================================= INSERTS ======================================================== */
-INSERT INTO pais (nombre)
-VALUES ('China');
-INSERT INTO pais (nombre)
-VALUES ('USA');
-INSERT INTO pais (nombre)
-VALUES ('Japón');
-INSERT INTO pais (nombre)
-VALUES ('Corea del sur');
+INSERT INTO pais (id, nombre)
+VALUES (1, 'China'),
+       (2, 'USA'),
+       (3, 'Japón'),
+       (4, 'Corea del sur');
 
 INSERT INTO categoria (id, nombre)
 VALUES (1, 'Snack');
@@ -178,7 +175,8 @@ VALUES (1, 'Cheetos'),
        (3, 'Kernel Season''s'),
        (4, 'Teddy Grahams'),
        (5, 'Coca-Cola'),
-       (6, 'Fanta');
+       (6, 'Fanta'),
+       (7, 'Pocky');
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
 VALUES (1, 'Cheetos Crunchy', 5.99, 'Cheese 8.5 oz', 'images/cheetosCrunchy.png', 4, 1);
@@ -186,62 +184,73 @@ INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (1, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (2, 'Cheetos Flamin'' Hot Crunchy', 5.99, 'Flamin'' Hot 8.5 oz', 'images/cheetosFlaminHot.png', 1, 1);
+VALUES (2, 'Cheetos Flamin'' Hot Crunchy', 5.99, 'Flamin'' Hot 8.5 oz',
+        'https://i.postimg.cc/gjbjV0zn/cheetos-Flamin-Hot.png', 1, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (2, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (3, 'Cheetos Flamin'' Hot Limon Crunchy', 5.99, 'Flamin'' Hot Limon 8.5 oz', 'images/cheetosFlaminHotLimon.png', 2, 1);
+VALUES (3, 'Cheetos Flamin'' Hot Limon Crunchy', 5.99, 'Flamin'' Hot Limon 8.5 oz',
+        'https://i.postimg.cc/ZRd0vNhG/cheetos-Flamin-Hot-Limon.png', 2, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (3, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (4, 'Cheetos Xxtra Flamin'' Hot Crunchy', 5.99, 'Xxtra Flamin'' Hot 8.5 oz', 'images/cheetosXxtraFlaminHot.png', 3, 1);
+VALUES (4, 'Cheetos Xxtra Flamin'' Hot Crunchy', 5.99, 'Xxtra Flamin'' Hot 8.5 oz',
+        'https://i.postimg.cc/L8xJcRTb/cheetos-Xxtra-Flamin-Hot.png', 3, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (4, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (5, 'Cheetos Cheddar Jalapeño Crunchy', 5.99, 'Jalapeño 8.5 oz', 'images/cheetosJalapeno.png', 4, 1);
+VALUES (5, 'Cheetos Cheddar Jalapeño Crunchy', 5.99, 'Jalapeño 8.5 oz',
+        'https://i.postimg.cc/Xvhpv8tK/cheetos-Jalapeno.png', 4, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (5, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (6, 'Cheetos Mexican Street Corn', 5.99, 'Mexican Street Corn 8.5 oz', 'images/cheetosMexican.png', 3, 1);
+VALUES (6, 'Cheetos Mexican Street Corn', 5.99, 'Mexican Street Corn 8.5 oz',
+        'https://i.postimg.cc/vmD4Mj2H/cheetos-Mexican.png', 3, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (6, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (7, 'Doritos Spicy Sweet Chili', 6.99, 'Spicy Sweet Chili 8.5 oz', 'images/doritosSpicySweetChili.png', 2, 2);
+VALUES (7, 'Doritos Spicy Sweet Chili', 6.99, 'Spicy Sweet Chili 8.5 oz',
+        'https://i.postimg.cc/KvnLsdw6/doritos-Spicy-Sweet-Chili.png', 2, 2);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (7, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (8, 'Doritos Cool Ranch', 6.99, 'Ranch 8.5 oz', 'images/doritosCoolRanch.png', 4, 2);
+VALUES (8, 'Doritos Cool Ranch', 6.99, 'Ranch 8.5 oz', 'https://i.postimg.cc/sXQGP850/doritos-Cool-Ranch.png', 4, 2);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (8, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (9, 'Doritos Spicy Nacho', 6.99, 'Spicy Nacho 8.5 oz', 'images/doritosSpicyNacho.png', 1, 2);
+VALUES (9, 'Doritos Spicy Nacho', 6.99, 'Spicy Nacho 8.5 oz', 'https://i.postimg.cc/4xstCWTm/doritos-Spicy-Nacho.png',
+        1, 2);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (9, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (10, 'Doritos Flamin'' Hot Nacho', 6.99, 'Flamin'' Hot Nacho 8.5 oz', 'images/doritosFlaminHot.png', 2, 2);
+VALUES (10, 'Doritos Flamin'' Hot Nacho', 6.99, 'Flamin'' Hot Nacho 8.5 oz',
+        'https://i.postimg.cc/9fNq7Vw7/doritos-Flamin-Hot.png', 2, 2);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (10, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (11, 'Doritos Flamin'' Hot Limon', 6.99, 'Flamin'' Hot Limon 8.5 oz', 'images/doritosFlaminHotLimon.png', 1, 2);
+VALUES (11, 'Doritos Flamin'' Hot Limon', 6.99, 'Flamin'' Hot Limon 8.5 oz',
+        'https://i.postimg.cc/YCRFtQp8/doritos-Flamin-Hot-Limon.png', 1, 2);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (11, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (12, 'Doritos Sweet & Tangy BBQ', 6.99, 'Sweet & Tangy BBQ 8.5 oz', 'images/doritosBBQ.png', 4, 2);
+VALUES (12, 'Doritos Sweet & Tangy BBQ', 6.99, 'Sweet & Tangy BBQ 8.5 oz',
+        'https://i.postimg.cc/mrrHkhk4/doritos-BBQ.png', 4, 2);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (12, 1);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (13, 'Kernel Season''s Butter Popcorn Seasoning', 4.99, 'Butter Popcorn 2.85 oz', 'images/kernelSeasonsButter.png', 2,
+VALUES (13, 'Kernel Season''s Butter Popcorn Seasoning', 4.99, 'Butter Popcorn 2.85 oz',
+        'https://i.postimg.cc/pdVDjq0g/kernel-Seasons-Butter.png', 2,
         3);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (13, 1);
@@ -250,7 +259,7 @@ VALUES (13, 2);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
 VALUES (14, 'Kernel Season''s Caramel Corn Popcorn Seasoning', 4.99, 'Caramel Corn Popcorn 2.85 oz',
-        'images/kernelSeasonsCheesyCaramelCorn.png', 4, 3);
+        'https://i.postimg.cc/k5jWvKzD/kernel-Seasons-Cheesy-Caramel-Corn.png', 4, 3);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (14, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
@@ -258,7 +267,7 @@ VALUES (14, 2);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
 VALUES (15, 'Kernel Season''s Cheesy Jalapeño Popcorn Seasoning', 4.99, 'Cheesy JalapeÃ±o Popcorn 2.85 oz',
-        'images/kernelSeasonsCheesyJalapeno.png', 1, 3);
+        'https://i.postimg.cc/rwN1zv91/kernel-Seasons-Cheesy-Jalapeno.png', 1, 3);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (15, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
@@ -266,7 +275,7 @@ VALUES (15, 2);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
 VALUES (16, 'Kernel Season''s Chile Limon Popcorn Seasoning', 4.99, 'Chile Limon Popcorn 2.85 oz',
-        'images/kernelSeasonsChileLimon.png', 3, 3);
+        'https://i.postimg.cc/Qd3g8XcN/kernel-Seasons-Chile-Limon.png', 3, 3);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (16, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
@@ -274,101 +283,136 @@ VALUES (16, 2);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
 VALUES (17, 'Kernel Season''s Nacho Cheddar Popcorn Seasoning', 4.99, 'Nacho Cheddar Popcorn 2.85 oz',
-        'images/kernelSeasonsNachoCheddar.png', 4, 3);
+        'https://i.postimg.cc/XNtcPKJC/kernel-Seasons-Nacho-Cheddar.png', 4, 3);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (17, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (17, 2);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (18, 'Kernel Season''s Ranch Popcorn Seasoning', 4.99, 'Ranch Popcorn 2.85 oz', 'images/kernelSeasonsRanch.png', 4, 3);
+VALUES (18, 'Kernel Season''s Ranch Popcorn Seasoning', 4.99, 'Ranch Popcorn 2.85 oz',
+        'https://i.postimg.cc/wx1QF46z/kernel-Seasons-Ranch.png', 4, 3);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (18, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (18, 2);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (19, 'Teddy Grahams Chocolatey Chips', 20.99, 'Chocolate 10 oz', 'images/teddyGrahamsChocolatey.png', 2, 4);
+VALUES (19, 'Teddy Grahams Chocolatey Chips', 20.99, 'Chocolate 10 oz',
+        'https://i.postimg.cc/jjvDrT41/teddy-Grahams-Chocolatey.png', 2, 4);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (19, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (19, 3);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (20, 'Teddy Grahams Cinnamon', 20.99, 'Cinnamon 10 oz', 'images/teddyGrahamsCinnamon.png', 2, 4);
+VALUES (20, 'Teddy Grahams Cinnamon', 20.99, 'Cinnamon 10 oz',
+        'https://i.postimg.cc/cJdvjCwY/teddy-Grahams-Cinnamon.png', 2, 4);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (20, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (20, 3);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (21, 'Teddy Grahams Cocoa', 20.99, 'Cocoa 10 oz', 'images/teddyGrahamsCocoa.png', 1, 4);
+VALUES (21, 'Teddy Grahams Cocoa', 20.99, 'Cocoa 10 oz', 'https://i.postimg.cc/L8KYtNsx/teddy-Grahams-Cocoa.png', 1, 4);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (21, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (21, 3);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (22, 'Teddy Grahams Honey', 20.99, 'Honey 10 oz', 'images/teddyGrahamsHoney.png', 2, 4);
+VALUES (22, 'Teddy Grahams Honey', 20.99, 'Honey 10 oz', 'https://i.postimg.cc/jSHWZPwt/teddy-Grahams-Honey.png', 2, 4);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (22, 1);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (22, 3);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (23, 'Caffeine-Free Coca-Cola', 1.49, 'Caffeine Free 12 oz', 'images/cocaColaCaffeineFree.png', 2, 5);
+VALUES (23, 'Caffeine-Free Coca-Cola', 1.49, 'Caffeine Free 12 oz',
+        'https://i.postimg.cc/htDJZh9m/coca-Cola-Caffeine-Free.png', 2, 5);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (23, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (24, 'Caffeine-Free Diet Coca-Cola', 1.49, 'Caffeine Free Diet 12 oz', 'images/cocaColaCaffeineFreeDiet.png', 4, 5);
+VALUES (24, 'Caffeine-Free Diet Coca-Cola', 1.49, 'Caffeine Free Diet 12 oz',
+        'https://i.postimg.cc/Fsgdx0Jm/coca-Cola-Caffeine-Free-Diet.png', 4, 5);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (24, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (25, 'Coca-Cola Cherry', 1.49, 'Cherry 12 oz', 'images/cocaColaCherry.png', 2, 5);
+VALUES (25, 'Coca-Cola Cherry', 1.49, 'Cherry 12 oz', 'https://i.postimg.cc/X70BFsqQ/coca-Cola-Cherry.png', 2, 5);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (25, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (26, 'Coca-Cola Zero Cherry', 1.49, 'Zero Cherry 12 oz', 'images/cocaColaCherryZero.png', 3, 5);
+VALUES (26, 'Coca-Cola Zero Cherry', 1.49, 'Zero Cherry 12 oz',
+        'https://i.postimg.cc/xjmbcwfX/coca-Cola-Cherry-Zero.png', 3, 5);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (26, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (27, 'Coca-Cola Vanilla', 1.49, 'Vanilla 12 oz', 'images/cocaColaVanilla.png', 1, 5);
+VALUES (27, 'Coca-Cola Vanilla', 1.49, 'Vanilla 12 oz', 'https://i.postimg.cc/ZRGBwccY/coca-Cola-Vanilla.png', 1, 5);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (27, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (28, 'Coca-Cola Vanilla Zero', 1.49, 'Vanilla Zero 12 oz', 'images/cocaColaCherryZero.png', 4, 5);
+VALUES (28, 'Coca-Cola Vanilla Zero', 1.49, 'Vanilla Zero 12 oz',
+        'https://i.postimg.cc/kGWVzb1Q/coca-Cola-Vanilla-Zero.png', 4, 5);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (28, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (29, 'Fanta', 2.99, 'Orange 20 oz', 'images/fanta.png', 1, 6);
+VALUES (29, 'Fanta', 2.99, 'Orange 20 oz', 'https://i.postimg.cc/Gh0GKc7P/fanta.png', 1, 6);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (29, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (30, 'Fanta Zero', 2.99, 'Orange Zero 20 oz', 'images/fantaZero.png', 2, 6);
+VALUES (30, 'Fanta Zero', 2.99, 'Orange Zero 20 oz', 'https://i.postimg.cc/xCcMxqV5/fanta-Zero.png', 2, 6);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (30, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (31, 'Fanta Grape', 2.99, 'Grape 20 oz', 'images/fantaGrape.png', 1, 6);
+VALUES (31, 'Fanta Grape', 2.99, 'Grape 20 oz', 'https://i.postimg.cc/CMnbbZNL/fanta-Grape.png', 1, 6);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (31, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (32, 'Fanta Pineapple', 2.99, 'Pineapple 20 oz', 'images/fantaPineapple.png', 2, 6);
+VALUES (32, 'Fanta Pineapple', 2.99, 'Pineapple 20 oz', 'https://i.postimg.cc/L5PfS7XZ/fanta-Pineapple.png', 2, 6);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (32, 4);
 
 INSERT INTO producto (id, nombre, precio, descripcion, img_path, id_pais, id_marca)
-VALUES (33, 'Fanta Strawberry', 2.99, 'Strawberry 20 oz', 'images/fantaStrawberry.png', 4, 6);
+VALUES (33, 'Fanta Strawberry', 2.99, 'Strawberry 20 oz', 'https://i.postimg.cc/TwFmZGR6/fanta-Strawberry.png', 4, 6);
 INSERT INTO producto_categoria (id_producto, id_categoria)
 VALUES (33, 4);
+
+INSERT INTO producto(id, nombre, precio, descripcion, img_path, id_pais, id_marca)
+VALUES (34, 'Pocky Chocolate', 1.99,
+        'The original Pocky flavor that started it all! Delicious alone with coffee, tea, milk or wine, Pocky Chocolate is the perfect every day, all occasion chocolate snack.',
+        'https://i.postimg.cc/qRnF9HF3/Pocky-Chocolate-70g-Front.png', 3, 7),
+       (35, 'Pocky Almond Crush', 1.99,
+        'Indulgent moments call for indulgent Pocky. Pocky Almond Crush is a special treat that combines rich milk chocolate with crunchy roasted almonds to make a flavor you won''t soon forget. You will love this luxurious take on a classic!',
+        'https://i.postimg.cc/7P3c9D0v/Pocky-Almond-Crush-41g-Front.png', 3, 7),
+       (36, 'Pocky Banana', 1.99,
+        'Two delicious flavors combine into one sweet snack. Pairing the light cocoa biscuit stick with a smooth banana flavored cream, Pocky Banana is the perfect pick me up snack to brighten your day…or a friend’s! It’s a no mess snack packed with a fruity goodness flavor.',
+        'https://i.postimg.cc/hvBYn3F3/Pocky-Banana-41g-Front.png', 3, 7),
+       (37, 'Pocky Cookies & Cream', 1.99,
+        'We’ve taken the classic cookies & cream and turned it into a delicious Pocky flavor. Creamy and satisfying, Pocky Cookies & Cream perfectly balances the sweet cream. With crunchy cookie bits in every bite, this is the new twist to the classic',
+        'https://i.postimg.cc/MHmFpbqZ/Pocky-Cookies-And-Crean-41g-Front.png', 3, 7),
+       (38, 'Pocky Crunchy Strawberry', 1.99,
+        'Chocolate and strawberry - what more could you ask for? Crunchy Strawberry Pocky combines chocolate biscuit sticks, strawberry cream, and real strawberry pieces. Each bite is delightfully delicious! Perfect for movie night or as dessert. Give this flavor a try the next time you are looking to treat yourself or your friends and family.',
+        'https://i.postimg.cc/m2Tn6qyP/Pocky-Crunchy-Strawberry-51g-Front.png', 3, 7),
+       (39, 'Pocky Matcha Green Tea', 1.99,
+        'Pocky Matcha Green Tea blends the authentic flavor of finely powdered matcha into a smooth green tea cream. Light and refreshing, it’s the perfect delicate flavor with a satisfying crunch.',
+        'https://i.postimg.cc/m2Vnxwm8/Pocky-Matcha-70g-Front.png', 3, 7);;
+
+INSERT INTO producto_categoria(id_producto, id_categoria)
+VALUES (34, 1),
+       (35, 1),
+       (36, 1),
+       (37, 1),
+       (38, 1),
+       (39, 1);
 
 # Cambiar la fecha a algunos productos
 UPDATE producto

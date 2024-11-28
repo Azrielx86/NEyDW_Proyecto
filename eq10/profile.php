@@ -18,7 +18,7 @@
                     <!--                    <li><a href="#">Perfil</a></li>-->
                 </ul>
             </div>
-            <img class="logo-2" src="images/logo.webp" alt="Logo de la tienda">
+            <img class="logo-2" src="icons/logo.webp" alt="Logo de la tienda">
             <div class="menu-2">
                 <ul>
                     <!--                    <li><a href="car.php">Carrito</a></li>-->

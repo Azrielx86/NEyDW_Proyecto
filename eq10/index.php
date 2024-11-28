@@ -50,7 +50,7 @@ include "header.php"
                             </div>
                         </div>
                         <div class="slider-img">
-                            <img src="$product[img_path]" alt="" onerror="this.src='images/s1.svg'">
+                            <img src="$product[img_path]" alt="" onerror="this.src='icons/s1.svg'">
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ EOF;
                                             <div class="product">
                                                 <div class="product-img">
                                                     <h4>New</h4>
-                                                    <img src="$product[img_path]" alt="" onerror="this.src='images/s1.svg'">
+                                                    <img src="$product[img_path]" alt="" onerror="this.src='icons/s1.svg'">
                                                 </div>
                                                 <div class="product-txt">
                                                     <h4>$product[nombre]</h4>
@@ -163,7 +163,7 @@ EOF;
                                             <div class="product">
                                                 <div class="product-img">
                                                     <h4>New</h4>
-                                                    <img src="$product[img_path]" alt="" onerror="this.src='images/s1.svg'">
+                                                    <img src="$product[img_path]" alt="" onerror="this.src='icons/s1.svg'">
                                                 </div>
                                                 <div class="product-txt">
                                                     <h4>$product[nombre]</h4>
@@ -195,7 +195,7 @@ EOF;
 <section class="info container">
 
     <div class="info-img">
-        <img src="images/kernelSeasonsRanch.png" alt="">
+        <img src="icons/kernelSeasonsRanch.png" alt="">
     </div>
     <div class="info-txt">
         <h2>Información</h2>
@@ -247,19 +247,19 @@ EOF;
                 <div class="socials">
                     <a href="#">
                         <div class="social">
-                            <img src="images/s1.svg" alt="">
+                            <img src="icons/s1.svg" alt="">
                         </div>
                     </a>
 
                     <a href="#">
                         <div class="social">
-                            <img src="images/s2.svg" alt="">
+                            <img src="icons/s2.svg" alt="">
                         </div>
                     </a>
 
                     <a href="#">
                         <div class="social">
-                            <img src="images/s3.svg" alt="">
+                            <img src="icons/s3.svg" alt="">
                         </div>
                     </a>
                 </div>
@@ -280,7 +280,7 @@ EOF;
 
 <footer class="footer container">
 
-    <img class="logo-3" src="images/logo.webp" alt="">
+    <img class="logo-3" src="icons/logo.webp" alt="">
     <div class="links">
         <h4>Lorem</h4>
         <ul>
@@ -295,19 +295,19 @@ EOF;
 
             <a href="#">
                 <div class="social">
-                    <img src="images/s3.svg" alt="">
+                    <img src="icons/s3.svg" alt="">
                 </div>
             </a>
 
             <a href="#">
                 <div class="social">
-                    <img src="images/s3.svg" alt="">
+                    <img src="icons/s3.svg" alt="">
                 </div>
             </a>
 
             <a href="#">
                 <div class="social">
-                    <img src="images/s3.svg" alt="">
+                    <img src="icons/s3.svg" alt="">
                 </div>
             </a>
 
