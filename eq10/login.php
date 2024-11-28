@@ -102,44 +102,6 @@
             margin-top: 12px;
         }
 
-        .logo-2 {
-            width: 150px;
-        }
-
-        .menu-2 {
-            margin-left: 180px;
-            display: flex;
-            align-items: center;
-        }
-
-        .menu {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .navbar {
-            display: flex;
-        }
-
-        .menu-1 {
-            margin-right: 180px;
-        }
-
-        .header-content {
-            margin-top: 200px;
-            padding-bottom: 50px;
-        }
-
         .menu .navbar ul li {
             position: relative;
             float: left;

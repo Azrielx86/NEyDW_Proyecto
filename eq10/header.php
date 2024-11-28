@@ -3,7 +3,7 @@
 echo <<< EOF
 <header>
     <div class="menu">
-        <img class="logo-1" src="icons/logo.webp" alt="">
+        <img class="logo-1" src="icons/logo.svg" alt="">
         <input type="checkbox" id="menu">
         <label for="menu">
             <img src="icons/menu.png" class="menu-icono" alt="">
@@ -15,7 +15,7 @@ echo <<< EOF
                     <li><a href="products.php">Productos</a></li>
                 </ul>
             </div>
-            <img class="logo-2" src="icons/logo.webp" alt="">
+            <img class="logo-2" src="icons/logo.svg" alt="">
             <div class="menu-2">
                 <ul>
 <!--                    <li><a href="car.php">Carrito</a></li>-->

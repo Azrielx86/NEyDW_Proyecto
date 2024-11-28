@@ -118,6 +118,15 @@ CREATE TABLE IF NOT EXISTS compra_cliente
     CONSTRAINT fk_cu_usuario FOREIGN KEY (id_cliente) REFERENCES cliente (id)
 );
 
+CREATE TABLE IF NOT EXISTS contacto
+(
+    id      INT AUTO_INCREMENT NOT NULL,
+    nombre  VARCHAR(256)       NOT NULL,
+    email   VARCHAR(128)       NOT NULL,
+    mensaje VARCHAR(2046)      NOT NULL DEFAULT '',
+    CONSTRAINT pk_contacto PRIMARY KEY (id)
+);
+
 DROP PROCEDURE IF EXISTS hash_password;
 DROP TRIGGER IF EXISTS before_insert_cliente;
 

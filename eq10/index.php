@@ -195,14 +195,27 @@ EOF;
 <section class="info container">
 
     <div class="info-img">
-        <img src="icons/kernelSeasonsRanch.png" alt="">
+        <img src="icons/products.svg" alt="">
     </div>
     <div class="info-txt">
-        <h2>Información</h2>
-        <p>
-            Pagina en proceso.
-        </p>
-        <a href="#" class="btn-2">Más Información</a>
+        <h2>Contacto</h2>
+        <form class="contact-form" action="contact.php" method="post">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje (Opcional)</label>
+                <textarea id="message" name="message"></textarea>
+            </div>
+
+            <button style="border: none" class="btn-2" type="submit">Enviar</button>
+        </form>
+<!--        <a href="#" class="btn-2">Más Información</a>-->
 
     </div>
 
@@ -270,52 +283,60 @@ EOF;
 </section>
 
 <section>
-
     <iframe class="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14901.215843756023!2d-99.28043756812181!3d19.358812704417726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d200c8ffc50487%3A0xcc4765164a3d6d8f!2sLomas%20de%20Santa%20Fe%2C%20Contadero%2C%2005348%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1725858764138!5m2!1ses-419!2smx"
             width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-
 </section>
 
 <footer class="footer container">
 
-    <img class="logo-3" src="icons/logo.webp" alt="">
-    <div class="links">
-        <h4>Lorem</h4>
-        <ul>
-            <li><a href="#">lorem</a></li>
-            <li><a href="#">lorem</a></li>
-            <li><a href="#">lorem</a></li>
-        </ul>
-    </div>
-    <div class="links">
-        <h4>Redes Sociales</h4>
-        <div class="socials">
+    <img class="logo-3" src="icons/logo.svg" alt="">
 
-            <a href="#">
-                <div class="social">
-                    <img src="icons/s3.svg" alt="">
-                </div>
-            </a>
-
-            <a href="#">
-                <div class="social">
-                    <img src="icons/s3.svg" alt="">
-                </div>
-            </a>
-
-            <a href="#">
-                <div class="social">
-                    <img src="icons/s3.svg" alt="">
-                </div>
-            </a>
-
-        </div>
-    </div>
     <div>
-        <a href="add_products.php">Test agregado de productos</a>
+        <p>
+            Facultad de Ingeniería - Negocios Electrónicos y Desarrollo Web
+        </p>
+        <p>
+            Semestre 2025-1
+        </p>
     </div>
+
+    <!--    <div class="links">-->
+    <!--        <h4>Lorem</h4>-->
+    <!--        <ul>-->
+    <!--            <li><a href="#">lorem</a></li>-->
+    <!--            <li><a href="#">lorem</a></li>-->
+    <!--            <li><a href="#">lorem</a></li>-->
+    <!--        </ul>-->
+    <!--    </div>-->
+    <!--    <div class="links">-->
+    <!--        <h4>Redes Sociales</h4>-->
+    <!--        <div class="socials">-->
+    <!---->
+    <!--            <a href="#">-->
+    <!--                <div class="social">-->
+    <!--                    <img src="icons/s3.svg" alt="">-->
+    <!--                </div>-->
+    <!--            </a>-->
+    <!---->
+    <!--            <a href="#">-->
+    <!--                <div class="social">-->
+    <!--                    <img src="icons/s3.svg" alt="">-->
+    <!--                </div>-->
+    <!--            </a>-->
+    <!---->
+    <!--            <a href="#">-->
+    <!--                <div class="social">-->
+    <!--                    <img src="icons/s3.svg" alt="">-->
+    <!--                </div>-->
+    <!--            </a>-->
+    <!---->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <a href="add_products.php">Test agregado de productos</a>-->
+    <!--    </div>-->
 </footer>
 
 
