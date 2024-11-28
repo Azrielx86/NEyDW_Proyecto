@@ -15,51 +15,29 @@ global $server, $username, $password, $dbname;
 </head>
 <body>
 
-<header>
-    <div class="menu container">
-        <img class="logo-1" src="images/logo.webp" alt="">
-        <input type="checkbox" id="menu">
-        <label for="menu">
-            <img src="images/menu.png" class="menu-icono" alt="">
-        </label>
-        <nav class="navbar">
-            <div class="menu-1">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="products.php">Productos</a></li>
-                </ul>
-            </div>
-            <img class="logo-2" src="images/logo.webp" alt="">
-            <div class="menu-2">
-                <ul>
-                    <li><a href="car.php">Carrito</a></li>
-                    <li><a href="login.php">Perfil</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+<?php
+include "header.php"
+?>
 
-    <div class="header-content container">
+<div class="header-content container">
 
-        <div class="swiper mySwiper-1">
-            <div class="swiper-wrapper">
+    <div class="swiper mySwiper-1">
+        <div class="swiper-wrapper">
+            <?php
+            $conn = new mysqli($server, $username, $password, $dbname);
+            if ($conn->connect_error)
+                die("Cannot connect to database. $conn->connect_error");
 
-                <?php
-
-                $conn = new mysqli($server, $username, $password, $dbname);
-                if ($conn->connect_error)
-                    die("Cannot connect to database. $conn->connect_error");
-
-                $result = $conn->query("SELECT producto.nombre, producto.img_path, marca.nombre marca
+            $result = $conn->query("SELECT producto.nombre, producto.img_path, marca.nombre marca
                                                 FROM producto
                                                 INNER JOIN marca
                                                 ON producto.id_marca = marca.id
                                                 ORDER BY popularity DESC
                                                 LIMIT 3");
-                $products = $result->fetch_all(MYSQLI_ASSOC);
+            $products = $result->fetch_all(MYSQLI_ASSOC);
 
-                foreach ($products as $product) {
-                    echo <<< EOF
+            foreach ($products as $product) {
+                echo <<< EOF
                 <div class="swiper-slide">
                     <div class="slider">
                         <div class="slider-txt">
@@ -68,31 +46,28 @@ global $server, $username, $password, $dbname;
                                 $product[nombre]
                             </p>
                             <div class="botones">
-                                <a href="#" class="btn-1">Ver Más</a>
-                                <a href="#" class="btn-1">Comprar</a>
+                                <a href="products.php" class="btn-1">Ver Más</a>
+                                <a href="products.php" class="btn-1">Comprar</a>
                             </div>
                         </div>
                         <div class="slider-img">
                             <img src="$product[img_path]" alt="" onerror="this.src='images/s1.svg'">
-
                         </div>
                     </div>
                 </div>
 EOF;
-                }
+            }
 
-                ?>
+            ?>
 
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
         </div>
-
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
     </div>
 
+</div>
 
-</header>
 
 <main class="products">
     <div class="tabs container">
@@ -189,7 +164,7 @@ EOF;
                                             <div class="product">
                                                 <div class="product-img">
                                                     <h4>New</h4>
-                                                    <img src="$product[img_path]" alt="" style="max-height: 5rem;" onerror="this.src='images/s1.svg'">
+                                                    <img src="$product[img_path]" alt="" onerror="this.src='images/s1.svg'">
                                                 </div>
                                                 <div class="product-txt">
                                                     <h4>$product[nombre]</h4>

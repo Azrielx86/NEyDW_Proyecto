@@ -248,9 +248,9 @@
                 localStorage.setItem("client_id", json.id);
                 window.location.href = `${BASE_URL}/profile.php`
             } else {
-                console.error("Client does not exists");
+                console.error("Invalid user or password");
                 let errorReport = document.getElementById("error-report");
-                errorReport.innerHTML = `<div><p>This user does not exist.</p></div>`;
+                errorReport.innerHTML = `<div><p>Invalid Email or Password.</p></div>`;
             }
         } else {
             let errorReport = document.getElementById("error-report");

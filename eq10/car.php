@@ -12,25 +12,9 @@ global $server, $username, $password, $dbname;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<header>
-    <div class="menu container">
-        <nav class="navbar">
-            <div class="menu-1">
-                <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="products.php">Productos</a></li>
-                </ul>
-            </div>
-            <img class="logo-2" src="images/logo.webp" alt="">
-            <div class="menu-2">
-                <ul>
-                    <li><a href="car.php">Carrito</a></li>
-                    <li><a href="login.php">Perfil</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
+<?php
+include "header.php"
+?>
 <div class="tabs container">
     <h1>Comprar productos</h1>
     <br>

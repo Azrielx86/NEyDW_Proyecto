@@ -12,25 +12,28 @@ global $server, $username, $password, $dbname;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<header>
-    <div class="menu container">
-        <nav class="navbar">
-            <div class="menu-1">
-                <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                </ul>
-            </div>
-            <img class="logo-2" src="images/logo.webp" alt="">
-            <div class="menu-2">
-                <ul>
-                    <li><a href="car.php">Carrito</a></li>
-                    <li><a href="login.php">Perfil</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
+<?php
+include "header.php"
+?>
+<!--<header>-->
+<!--    <div class="menu container">-->
+<!--        <nav class="navbar">-->
+<!--            <div class="menu-1">-->
+<!--                <ul>-->
+<!--                    <li><a href="index.php">Inicio</a></li>-->
+<!--                    <li><a href="#">Productos</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <img class="logo-2" src="images/logo.webp" alt="">-->
+<!--            <div class="menu-2">-->
+<!--                <ul>-->
+<!--                    <li><a href="car.php">Carrito</a></li>-->
+<!--                    <li><a href="login.php">Perfil</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--</header>-->
 <div class="tabs container">
     <?php
     $conn = new mysqli($server, $username, $password, $dbname);

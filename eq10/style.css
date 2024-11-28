@@ -200,13 +200,29 @@ button:hover {
 }
 
 .slider-img {
-    width: 50%;
+    /*max-height: 5rem;*/
+    max-width: 40%;
+    transition: transform .2s ease-in-out;
 }
 
 .slider-img img {
-    margin-right: 225px;
-    width: 550px;
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 100;
 }
+
+.slider-img:hover {
+    transform: scale(1.05);
+}
+
+/*.slider-img img {*/
+/*    display: block;*/
+/*    margin-right: 225px;*/
+/*    width: 550px;*/
+/*}*/
 
 .products {
     background-color: #DCF6F9;
@@ -256,10 +272,11 @@ button:hover {
     align-items: center;
     padding: 20px;
     margin: 0 10px;
+    height: 15rem;
 }
 
 .product-img {
-    width: 50%;
+    height: 100%;
     text-align: left;
 }
 
@@ -270,6 +287,7 @@ button:hover {
 }
 
 .product-img h4 {
+    position: absolute;
     display: inline-block;
     padding: 5px 7px;
     line-height: 15px;
@@ -279,12 +297,15 @@ button:hover {
     font-weight: 800;
     border: 2px solid #60C3CE;
     border-radius: 10px;
-    margin-bottom: 50px;
+    background: #dcf6f9;
+    /*margin-bottom: 50px;*/
 }
 
 .product-img img {
-    width: 150px;
-    height: 120px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 100;
 }
 
 .product-img1 img {
@@ -325,12 +346,16 @@ button:hover {
 }
 
 .info-img {
-    width: 50%;
+    max-width: 50%;
 }
 
 .info-img img {
-    width: 500px;
-    height: 250px;
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 100;
 }
 
 .info-txt {
@@ -580,6 +605,10 @@ button:hover {
 }
 
 @media (max-width: 991px) {
+
+    html {
+        width: 100%;
+    }
 
     .menu {
         display: none;

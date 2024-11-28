@@ -72,6 +72,33 @@ function registerUser($email, $usr, $usr_lastname, $pwd)
     return json_encode(["error" => "Incorrect Request"]);
 }
 
+function updateUserInfo($userinfo)
+{
+    global $server, $username, $password, $dbname;
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        $json = json_decode($userinfo);
+
+        $conn = new mysqli($server, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            return json_encode(["error" => "Cannot connect to database. " . $conn->connect_error]);
+        }
+
+        $stmt = $conn->prepare("UPDATE cliente
+                                    SET nombre = ?, apellidos = ?, correo = ?, telefono = ?, direccion = ?
+                                    WHERE id = ?");
+        $stmt->bind_param("sssssi", $json->username, $json->lastname, $json->email, $json->phone, $json->dir, $json->id);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            return json_encode(["success" => "Update successful"]);
+        } else {
+            return json_encode(["error" => "Incorrect Request"]);
+        }
+    }
+    return json_encode(["error" => "Incorrect Request"]);
+}
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
@@ -88,10 +115,16 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }
         break;
     case 'POST':
-        define("client_email", $_POST["email"]);
-        define("client_username", $_POST["username"]);
-        define("client_lastname", $_POST["lastname"]);
-        define("client_password", $_POST["pwd"]);
+        if (isset($_POST["userinfo"])) {
+            define("userinfo", $_POST["userinfo"]);
+            echo updateUserInfo(userinfo);
+        } else {
+            define("client_email", $_POST["email"]);
+            define("client_username", $_POST["username"]);
+            define("client_lastname", $_POST["lastname"]);
+            define("client_password", $_POST["pwd"]);
 
-        echo registerUser(client_email, client_username, client_lastname, client_password);
+            echo registerUser(client_email, client_username, client_lastname, client_password);
+        }
+        break;
 }

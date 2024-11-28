@@ -15,13 +15,13 @@
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="products.php">Productos</a></li>
-                    <li><a href="#">Perfil</a></li>
+                    <!--                    <li><a href="#">Perfil</a></li>-->
                 </ul>
             </div>
             <img class="logo-2" src="images/logo.webp" alt="Logo de la tienda">
             <div class="menu-2">
                 <ul>
-                    <li><a href="car.php">Carrito</a></li>
+                    <!--                    <li><a href="car.php">Carrito</a></li>-->
                     <li>
                         <button style="font-size: 18px;padding: 20px;color: #3C7A80;display: block; background: none; border: none"
                                 onclick="logout()">Logout
@@ -85,40 +85,21 @@
                 </div>
                 <!--                <div class="form-row">-->
                 <!--                    <div class="form-group">-->
-                <!--                        <label for="email">Calle y Número</label>-->
-                <!--                        <input type="text" id="calle" name="calle" placeholder="calle">-->
+                <!--                        <label for="contrasena">Contraseña</label>-->
+                <!--                        <input type="password" id="contrasena" name="contrasena" placeholder="contraseña">-->
                 <!--                    </div>-->
                 <!--                    <div class="form-group">-->
-                <!--                        <label for="ciudad">Código Postal</label>-->
-                <!--                        <input type="text" id="cp" name="cp" placeholder="código postal">-->
+                <!--                        <label for="verifica-contrasena">Verifica la contraseña</label>-->
+                <!--                        <input type="password" id="verifica-contrasena" name="verifica-contrasena"-->
+                <!--                               placeholder="contraseña">-->
                 <!--                    </div>-->
                 <!--                </div>-->
-                <!--                <div class="form-row">-->
-                <!--                    <div class="form-group">-->
-                <!--                        <label for="email">Estado</label>-->
-                <!--                        <input type="text" id="estado" name="estado" placeholder="estado">-->
-                <!--                    </div>-->
-                <!--                    <div class="form-group">-->
-                <!--                        <label for="ciudad">Ciudad</label>-->
-                <!--                        <input type="text" id="ciudad" name="ciudad" placeholder="ciudad">-->
-                <!--                    </div>-->
-                <!--                </div>-->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" placeholder="contraseña">
-                    </div>
-                    <div class="form-group">
-                        <label for="verifica-contrasena">Verifica la contraseña</label>
-                        <input type="password" id="verifica-contrasena" name="verifica-contrasena"
-                               placeholder="contraseña">
-                    </div>
-                </div>
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-success">Guardar</button>
-                    <button type="reset" class="btn btn-danger">Limpiar</button>
+                    <!--                    <button type="submit" class="btn btn-success">Guardar</button>-->
+                    <!--                    <button type="reset" class="btn btn-danger">Limpiar</button>-->
                 </div>
             </form>
+            <button onclick="updateInfo()" class="btn btn-success">Guardar</button>
         </section>
     </div>
 </div>
@@ -194,6 +175,28 @@
     const logout = () => {
         localStorage.removeItem("client_id");
         window.location.href = `${BASE_URL}`
+    }
+
+    const updateInfo = () => {
+        const id = localStorage.getItem("client_id");
+        const nombre = $("#nombre").val();
+        const apellidos = $("#apellidos").val();
+        const correo = $("#email").val();
+        const telefono = $("#movil").val();
+        const direccion = $("#direccion").val();
+
+        $.post(`${BASE_URL}/users.php`, {
+            userinfo: JSON.stringify({
+                id: id,
+                username: nombre,
+                lastname: apellidos,
+                email: correo,
+                phone: telefono,
+                dir: direccion
+            })
+        }, () => {
+            location.reload();
+        });
     }
 </script>
 </html>
