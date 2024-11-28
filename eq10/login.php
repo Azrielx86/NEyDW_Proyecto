@@ -186,8 +186,13 @@
 
         <div class="login-form">
             <div style="display: none" id="input-nombre" class="control-group">
-                <input type="text" class="login-field" value="" placeholder="Nombre de usuario" id="username">
+                <input type="text" class="login-field" value="" placeholder="Nombre" id="username">
                 <label class="login-field-icon fui-user" for="username"></label>
+            </div>
+
+            <div style="display: none" id="input-lastname" class="control-group">
+                <input type="text" class="login-field" value="" placeholder="Apellido" id="lastname">
+                <label class="login-field-icon fui-user" for="lastname"></label>
             </div>
 
             <div class="control-group">
@@ -255,14 +260,15 @@
 
     const register = () => {
         let username = $("#username").val().trim();
+        let lastname = $("#lastname").val().trim();
         let email = $("#email").val().trim();
         let pwd = $("#login-pass").val().trim();
 
-        if (!username || !email || !pwd) {
+        if (!username || !email || !pwd || !lastname) {
             console.error("Invalid values in the form");
         }
 
-        $.post(`${BASE_URL}/users.php`, {email, username, pwd}, (response) => {
+        $.post(`${BASE_URL}/users.php`, {email, username, lastname, pwd}, (response) => {
             let json = JSON.parse(response);
             if (json.error) {
                 console.error(json.error);
@@ -271,13 +277,14 @@
             } else {
                 console.log("Client registered successfully");
                 localStorage.setItem("client_id", json.id);
-                window.location.href = `${BASE_URL}/profile.php`;
             }
         });
+        window.location.href = `${BASE_URL}/profile.php`;
     }
 
     const changeView = () => {
         $("#input-nombre").css("display", "block");
+        $("#input-lastname").css("display", "block");
         $("#btn-mode").css("display", "none");
         $("#btn-login")
             .html("Registrarte")

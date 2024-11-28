@@ -125,7 +125,7 @@ global $server, $username, $password, $dbname;
                                 let newDiv = document.createElement("div");
                                 newDiv.id = `q_${product.product.nombre}`
                                 newDiv.classList.add("products-list-item");
-                                newDiv.innerHTML = `<img src="images/${product.product.img_path}" alt="">
+                                newDiv.innerHTML = `<img src="${product.product.img_path}" alt="">
                                                     <div>
                                                         <p class="products-list-info">${product.product.nombre}: ${product.quantity}</p>
                                                         <button class="btn-remove" onclick="removeProduct(${product.product.id})">

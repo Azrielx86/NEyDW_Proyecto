@@ -23,7 +23,9 @@
                 <ul>
                     <li><a href="car.php">Carrito</a></li>
                     <li>
-                        <button onclick="logout()">Logout</button>
+                        <button style="font-size: 18px;padding: 20px;color: #3C7A80;display: block; background: none; border: none"
+                                onclick="logout()">Logout
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -77,29 +79,30 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="direccion">Dirección</label>
-                        <textarea style="resize: none" id="direccion" name="direccion" rows="5" placeholder="Dirección"></textarea>
+                        <textarea style="resize: none" id="direccion" name="direccion" rows="5"
+                                  placeholder="Dirección"></textarea>
                     </div>
                 </div>
-<!--                <div class="form-row">-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="email">Calle y Número</label>-->
-<!--                        <input type="text" id="calle" name="calle" placeholder="calle">-->
-<!--                    </div>-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="ciudad">Código Postal</label>-->
-<!--                        <input type="text" id="cp" name="cp" placeholder="código postal">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="form-row">-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="email">Estado</label>-->
-<!--                        <input type="text" id="estado" name="estado" placeholder="estado">-->
-<!--                    </div>-->
-<!--                    <div class="form-group">-->
-<!--                        <label for="ciudad">Ciudad</label>-->
-<!--                        <input type="text" id="ciudad" name="ciudad" placeholder="ciudad">-->
-<!--                    </div>-->
-<!--                </div>-->
+                <!--                <div class="form-row">-->
+                <!--                    <div class="form-group">-->
+                <!--                        <label for="email">Calle y Número</label>-->
+                <!--                        <input type="text" id="calle" name="calle" placeholder="calle">-->
+                <!--                    </div>-->
+                <!--                    <div class="form-group">-->
+                <!--                        <label for="ciudad">Código Postal</label>-->
+                <!--                        <input type="text" id="cp" name="cp" placeholder="código postal">-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="form-row">-->
+                <!--                    <div class="form-group">-->
+                <!--                        <label for="email">Estado</label>-->
+                <!--                        <input type="text" id="estado" name="estado" placeholder="estado">-->
+                <!--                    </div>-->
+                <!--                    <div class="form-group">-->
+                <!--                        <label for="ciudad">Ciudad</label>-->
+                <!--                        <input type="text" id="ciudad" name="ciudad" placeholder="ciudad">-->
+                <!--                    </div>-->
+                <!--                </div>-->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="contrasena">Contraseña</label>

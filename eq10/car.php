@@ -59,7 +59,7 @@ global $server, $username, $password, $dbname;
 
                     echo '<div class="product">';
                     echo '<div class="product-img1">';
-                    echo '<img src="images/' . $product["img_path"] . '" alt="">';
+                    echo '<img src="' . $product["img_path"] . '" alt="">';
                     echo '</div>';
                     echo '<div class="product-txt">';
                     echo '<h4>' . $product["nombre"] . '</h4>';

@@ -2,7 +2,7 @@
 header("Content-Type: application/json; charset=UTF-8");
 require "./config.php";
 
-function getClient($email, $password)
+function getClient($email, $pwd)
 {
     global $server, $username, $password, $dbname;
 
@@ -12,7 +12,7 @@ function getClient($email, $password)
             return json_encode(["error" => "Cannot connect to database. " . $conn->connect_error]);
         }
 
-        $hashed = hash('sha256', $password);
+        $hashed = hash('sha256', $pwd);
 
         $stmt = $conn->prepare("SELECT id FROM cliente WHERE correo = ? AND password = ?");
         $stmt->bind_param("ss", $email, $hashed);
@@ -51,7 +51,7 @@ function getClientInfo($client_id)
     return json_encode(["error" => "Incorrect Request"]);
 }
 
-function registerUser($email, $usr, $pwd)
+function registerUser($email, $usr, $usr_lastname, $pwd)
 {
     global $server, $username, $password, $dbname;
 
@@ -61,8 +61,8 @@ function registerUser($email, $usr, $pwd)
             return json_encode(["error" => "Cannot connect to database. " . $conn->connect_error]);
         }
 
-        $stmt = $conn->prepare("INSERT INTO cliente(nombre, correo, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $usr, $email, $pwd);
+        $stmt = $conn->prepare("INSERT INTO cliente(nombre, apellidos, correo, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $usr, $usr_lastname, $email, $pwd);
         $stmt->execute();
         $inserted_id = $stmt->insert_id;
         $conn->close();
@@ -90,7 +90,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case 'POST':
         define("client_email", $_POST["email"]);
         define("client_username", $_POST["username"]);
+        define("client_lastname", $_POST["lastname"]);
         define("client_password", $_POST["pwd"]);
 
-        echo registerUser(client_email, client_username, client_password);
+        echo registerUser(client_email, client_username, client_lastname, client_password);
 }
