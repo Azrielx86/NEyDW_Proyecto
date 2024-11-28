@@ -1,7 +1,7 @@
 <?php
 
 echo <<< EOF
-<header>
+<header id="inicio">
     <div class="menu">
         <img class="logo-1" src="icons/logo.svg" alt="">
         <input type="checkbox" id="menu">

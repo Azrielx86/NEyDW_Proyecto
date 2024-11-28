@@ -247,10 +247,10 @@ EOF;
             <div class="txt">
                 <h4>Telefono</h4>
                 <p>
-                    55 1234 5678
+                    +52 55 1234 5678
                 </p>
                 <p>
-                    55 9876 5432
+                    +52 55 9876 5432
                 </p>
 
             </div>
@@ -300,6 +300,10 @@ EOF;
         <p>
             Semestre 2025-1
         </p>
+    </div>
+
+    <div>
+        <a href="#inicio" class="btn-1">Volver a inicio</a>
     </div>
 
     <!--    <div class="links">-->

@@ -8,8 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<header style="margin-bottom: 8rem">
-    <div class="menu container">
+
+<header style="margin-bottom: 9rem">
+    <div class="menu">
         <nav class="navbar">
             <div class="menu-1">
                 <ul>
