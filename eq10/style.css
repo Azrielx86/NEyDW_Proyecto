@@ -532,6 +532,19 @@ body {
     box-shadow: 0 0 5px #3C7A80;
 }
 
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group textarea:focus {
+    border-color: #54AAB4;
+    outline: none;
+    box-shadow: 0 0 5px #3C7A80;
+}
+
 .form-actions {
     text-align: right;
 }

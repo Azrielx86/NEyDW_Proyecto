@@ -76,24 +76,30 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="email">Calle y Número</label>
-                        <input type="text" id="calle" name="calle" placeholder="calle">
-                    </div>
-                    <div class="form-group">
-                        <label for="ciudad">Código Postal</label>
-                        <input type="text" id="cp" name="cp" placeholder="código postal">
+                        <label for="direccion">Dirección</label>
+                        <textarea style="resize: none" id="direccion" name="direccion" rows="5" placeholder="Dirección"></textarea>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Estado</label>
-                        <input type="text" id="estado" name="estado" placeholder="estado">
-                    </div>
-                    <div class="form-group">
-                        <label for="ciudad">Ciudad</label>
-                        <input type="text" id="ciudad" name="ciudad" placeholder="ciudad">
-                    </div>
-                </div>
+<!--                <div class="form-row">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="email">Calle y Número</label>-->
+<!--                        <input type="text" id="calle" name="calle" placeholder="calle">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="ciudad">Código Postal</label>-->
+<!--                        <input type="text" id="cp" name="cp" placeholder="código postal">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="form-row">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="email">Estado</label>-->
+<!--                        <input type="text" id="estado" name="estado" placeholder="estado">-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="ciudad">Ciudad</label>-->
+<!--                        <input type="text" id="ciudad" name="ciudad" placeholder="ciudad">-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="contrasena">Contraseña</label>
@@ -139,6 +145,7 @@
         $("#apellidos").val(client.apellidos);
         $("#email").val(client.correo);
         $("#movil").val(client.telefono);
+        $("#direccion").val(client.direccion)
         $("#compras_count").html(purchases.length);
 
         if (purchases.length > 0) {

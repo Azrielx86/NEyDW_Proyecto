@@ -1,17 +1,21 @@
 <!DOCTYPE html>
+<?php
+/** @noinspection DuplicatedCode */
+require "./config.php";
+global $server, $username, $password, $dbname;
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Inicio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-
     <div class="menu container">
         <img class="logo-1" src="images/logo.webp" alt="">
         <input type="checkbox" id="menu">
@@ -25,7 +29,7 @@
                     <li><a href="products.php">Productos</a></li>
                 </ul>
             </div>
-            <img class="logo-2" src="images/logo.webp"  alt="">
+            <img class="logo-2" src="images/logo.webp" alt="">
             <div class="menu-2">
                 <ul>
                     <li><a href="car.php">Carrito</a></li>
@@ -40,63 +44,44 @@
         <div class="swiper mySwiper-1">
             <div class="swiper-wrapper">
 
+                <?php
+
+                $conn = new mysqli($server, $username, $password, $dbname);
+                if ($conn->connect_error)
+                    die("Cannot connect to database. $conn->connect_error");
+
+                $result = $conn->query("SELECT producto.nombre, producto.img_path, marca.nombre marca
+                                                FROM producto
+                                                INNER JOIN marca
+                                                ON producto.id_marca = marca.id
+                                                ORDER BY popularity DESC
+                                                LIMIT 3");
+                $products = $result->fetch_all(MYSQLI_ASSOC);
+
+                foreach ($products as $product) {
+                    echo <<< EOF
                 <div class="swiper-slide">
                     <div class="slider">
                         <div class="slider-txt">
-                            <h1>Cheetos</h1>
+                            <h1>$product[marca]</h1>
                             <p>
-                                Mexican street corn
+                                $product[nombre]
                             </p>
                             <div class="botones">
                                 <a href="#" class="btn-1">Ver Más</a>
                                 <a href="#" class="btn-1">Comprar</a>
-
                             </div>
                         </div>
                         <div class="slider-img">
-                            <img src="images/cheetosMexican.png" alt="">
+                            <img src="$product[img_path]" alt="" onerror="this.src='images/s1.svg'">
 
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="slider">
-                        <div class="slider-txt">
-                            <h1>kernel Season's</h1>
-                            <p>
-                                Chessy jalapeño
-                            </p>
-                            <div class="botones">
-                                <a href="#" class="btn-1">Ver Más</a>
-                                <a href="#" class="btn-1">Comprar</a>
+EOF;
+                }
 
-                            </div>
-                        </div>
-                        <div class="slider-img">
-                            <img src="images/kernelSeasonsCheesyJalapeno.png" alt="">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slider">
-                        <div class="slider-txt">
-                            <h1>Teddy Grahams</h1>
-                            <p>
-                                Honey
-                            </p>
-                            <div class="botones">
-                                <a href="#" class="btn-1">Ver Más</a>
-                                <a href="#" class="btn-1">Comprar</a>
-
-                            </div>
-                        </div>
-                        <div class="slider-img">
-                            <img src="images/teddyGrahamsHoney.jpg" alt="">
-
-                        </div>
-                    </div>
-                </div>
+                ?>
 
             </div>
             <div class="swiper-button-next"></div>
@@ -117,77 +102,53 @@
         <div class="tab">
             <div class="swiper mySwiper-2" id="swiper1">
                 <div class="swiper-wrapper">
+                    <?php
 
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/cheetosMexican.png" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Producto 1</h4>
-                                <p>Snack</p>
-                                <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
+                    $conn = new mysqli($server, $username, $password, $dbname);
+                    if ($conn->connect_error)
+                        die("Cannot connect to database. $conn->connect_error");
 
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/fantaPineapple.png" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Producto 2</h4>
-                                <p>Soda</p>
-                                <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
+                    $result = $conn->query("SELECT id, nombre, img_path, precio 
+                                                    FROM producto 
+                                                    WHERE fecha_agregado < NOW() 
+                                                    ORDER BY fecha_agregado 
+                                                    DESC LIMIT 6;");
 
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/cheetosJalapeno.png" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Producto 3</h4>
-                                <p>Snack</p>
-                                <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
+                    /** @noinspection DuplicatedCode */
+                    $products = $result->fetch_all(MYSQLI_ASSOC);
 
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/kernelSeasonsChileLimon.png" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Producto 4</h4>
-                                <p>Snack</p>
-                                <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
+                    foreach ($products as $product) {
+                        $stmt = $conn->prepare("SELECT ct.nombre FROM producto pd
+                        INNER JOIN producto_categoria pdct ON pd.id = pdct.id_producto
+                        INNER JOIN categoria ct ON pdct.id_categoria = ct.id
+                        WHERE pd.id = ?");
+                        $stmt->bind_param("i", $product["id"]);
+                        $stmt->execute();
+                        $categories = $stmt->get_result();
+                        echo <<< EOF
+                                        <div class="swiper-slide">
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <h4>New</h4>
+                                                    <img src="$product[img_path]" alt="" onerror="this.src='images/s1.svg'">
+                                                </div>
+                                                <div class="product-txt">
+                                                    <h4>$product[nombre]</h4>
+                                                    <p>
+EOF;
+                        foreach ($categories->fetch_all(MYSQLI_ASSOC) as $cat) {
+                            echo "<span class='lbl-categoria'>" . $cat["nombre"] . "</span>";
+                        }
+                        echo <<< EOF
+                                                    </p>
+                                                    <span class="price">&#36 $product[precio]</span>
+                                                </div>
+                                            </div>
+                                        </div>
+EOF;
+                    }
 
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>New</h4>
-                                <img src="images/kernelSeasonsRanch.png" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Producto 5</h4>
-                                <p>Snack</p>
-                                <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    ?>
                 </div>
 
                 <div class="swiper-button-next"></div>
@@ -201,50 +162,54 @@
             <div class="swiper mySwiper-2" id="swiper2">
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>Nov 24</h4>
-                                <img src="images/teddyGrahamsHoney.jpg" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Producto 1</h4>
-                                <p>Snack</p>
-                                <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
 
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>Nov 30</h4>
-                                <img src="images/cocaColaVanilla.png" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Producto 2</h4>
-                                <p>Soda</p>
-                                <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
+                    $conn = new mysqli($server, $username, $password, $dbname);
+                    if ($conn->connect_error)
+                        die("Cannot connect to database. $conn->connect_error");
 
-                    <div class="swiper-slide">
-                        <div class="product">
-                            <div class="product-img">
-                                <h4>Dic 4</h4>
-                                <img src="images/fantaStrawberry.png" alt="">
-                            </div>
-                            <div class="product-txt">
-                                <h4>Producto 3</h4>
-                                <p>Soda</p>
-                                <span class="price">$4.99</span>
-                            </div>
-                        </div>
-                    </div>
+                    $result = $conn->query("SELECT id, nombre, img_path, precio 
+                                                    FROM producto 
+                                                    WHERE fecha_agregado > NOW() 
+                                                    ORDER BY fecha_agregado 
+                                                    DESC LIMIT 6;");
+
+                    $products = $result->fetch_all(MYSQLI_ASSOC);
+
+                    foreach ($products as $product) {
+                        $stmt = $conn->prepare("SELECT ct.nombre FROM producto pd
+                        INNER JOIN producto_categoria pdct ON pd.id = pdct.id_producto
+                        INNER JOIN categoria ct ON pdct.id_categoria = ct.id
+                        WHERE pd.id = ?");
+                        $stmt->bind_param("i", $product["id"]);
+                        $stmt->execute();
+                        $categories = $stmt->get_result();
+                        echo <<< EOF
+                                        <div class="swiper-slide">
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <h4>New</h4>
+                                                    <img src="$product[img_path]" alt="" style="max-height: 5rem;" onerror="this.src='images/s1.svg'">
+                                                </div>
+                                                <div class="product-txt">
+                                                    <h4>$product[nombre]</h4>
+                                                    <p>
+EOF;
+                        foreach ($categories->fetch_all(MYSQLI_ASSOC) as $cat) {
+                            echo "<span class='lbl-categoria'>" . $cat["nombre"] . "</span>";
+                        }
+                        echo <<< EOF
+                                                    </p>
+                                                    <span class="price">&#36 $product[precio]</span>
+                                                </div>
+                                            </div>
+                                        </div>
+EOF;
+                    }
+
+                    ?>
 
                 </div>
-
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
@@ -332,7 +297,10 @@
 
 <section>
 
-    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14901.215843756023!2d-99.28043756812181!3d19.358812704417726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d200c8ffc50487%3A0xcc4765164a3d6d8f!2sLomas%20de%20Santa%20Fe%2C%20Contadero%2C%2005348%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1725858764138!5m2!1ses-419!2smx" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14901.215843756023!2d-99.28043756812181!3d19.358812704417726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d200c8ffc50487%3A0xcc4765164a3d6d8f!2sLomas%20de%20Santa%20Fe%2C%20Contadero%2C%2005348%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1725858764138!5m2!1ses-419!2smx"
+            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 </section>
 
