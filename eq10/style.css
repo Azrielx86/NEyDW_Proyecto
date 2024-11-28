@@ -81,6 +81,10 @@ header {
     align-items: center;
 }
 
+.menu-2, .menu-1 a {
+    font-weight: bolder;
+}
+
 .logo-1 {
     width: 0;
 }
