@@ -153,7 +153,7 @@ include "header.php"
             </div>
 
             <button id="btn-login" class="btn btn-primary btn-large btn-block">Iniciar sesión</button>
-            <a class="login-link" href="#">¿Olvidaste tu contraseña?</a>
+<!--            <a class="login-link" href="#">¿Olvidaste tu contraseña?</a>-->
             <button
                     id="btn-mode"
                     style="border: none; margin: 0.5rem auto; padding: 0.5rem"
