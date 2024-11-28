@@ -15,26 +15,7 @@ global $server, $username, $password, $dbname;
 <?php
 include "header.php"
 ?>
-<!--<header>-->
-<!--    <div class="menu container">-->
-<!--        <nav class="navbar">-->
-<!--            <div class="menu-1">-->
-<!--                <ul>-->
-<!--                    <li><a href="index.php">Inicio</a></li>-->
-<!--                    <li><a href="#">Productos</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--            <img class="logo-2" src="images/logo.webp" alt="">-->
-<!--            <div class="menu-2">-->
-<!--                <ul>-->
-<!--                    <li><a href="car.php">Carrito</a></li>-->
-<!--                    <li><a href="login.php">Perfil</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </nav>-->
-<!--    </div>-->
-<!--</header>-->
-<div class="tabs container">
+<div style="margin-top: 6rem" class="products-container">
     <?php
     $conn = new mysqli($server, $username, $password, $dbname);
     if ($conn->connect_error)
@@ -55,7 +36,7 @@ include "header.php"
 
         echo '<div class="product">';
         echo '<div class="product-img1">';
-        echo '<img src="' . $product["img_path"] . '" alt="" onerror="this.src=\'images/s1.svg\'">';
+        echo '<img src="' . $product["img_path"] . '" alt="" onerror="this.src=\'icons/ItemNotFound.svg\'">';
         echo '</div>';
         echo '<div class="product-txt">';
         echo '<h4>' . $product["nombre"] . '</h4>';
@@ -128,7 +109,7 @@ include "header.php"
                                 let newDiv = document.createElement("div");
                                 newDiv.id = `q_${product.product.nombre}`
                                 newDiv.classList.add("products-list-item");
-                                newDiv.innerHTML = `<img src="${product.product.img_path}" alt="">
+                                newDiv.innerHTML = `<img src="${product.product.img_path}" onerror="this.src='icons/ItemNotFound.svg'" alt="">
                                                     <div>
                                                         <p class="products-list-info">${product.product.nombre}: ${product.quantity}</p>
                                                         <button class="btn-remove" onclick="removeProduct(${product.product.id})">

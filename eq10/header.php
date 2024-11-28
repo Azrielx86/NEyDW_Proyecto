@@ -2,7 +2,7 @@
 
 echo <<< EOF
 <header>
-    <div class="menu container">
+    <div class="menu">
         <img class="logo-1" src="images/logo.webp" alt="">
         <input type="checkbox" id="menu">
         <label for="menu">
@@ -25,4 +25,13 @@ echo <<< EOF
         </nav>
     </div>
 </header>
+
+<div class="team-info-card">
+    <p>Equipo 10 - Integrantes</p>
+    <div class="team-members">
+        <p>Martínez Ortiz Julio Alberto</p>
+        <p>Moreno Chalico Edgar Ulises</p>
+        <p>Ramirez Medina Daniel</p>
+    </div>
+</div>
 EOF;

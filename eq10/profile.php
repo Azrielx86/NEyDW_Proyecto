@@ -33,12 +33,21 @@
     </div>
 </header>
 
+<div class="team-info-card">
+    <p>Equipo 10 - Integrantes</p>
+    <div class="team-members">
+        <p>Martínez Ortiz Julio Alberto</p>
+        <p>Moreno Chalico Edgar Ulises</p>
+        <p>Ramirez Medina Daniel</p>
+    </div>
+</div>
+
 <div class="container1">
     <div class="profile-container">
 
         <aside class="profile-sidebar">
             <div class="profile-picture">
-                <img src="" alt="" class="avatar">
+                <img src="icons/UserIcon.svg" alt="" class="avatar">
                 <input type="file" name="profile-picture" id="profile-picture">
             </div>
 

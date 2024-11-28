@@ -20,7 +20,6 @@ include "header.php"
 ?>
 
 <div class="header-content container">
-
     <div class="swiper mySwiper-1">
         <div class="swiper-wrapper">
             <?php
