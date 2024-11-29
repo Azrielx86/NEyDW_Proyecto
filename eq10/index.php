@@ -193,6 +193,13 @@ EOF;
     </div>
 </main>
 
+<section class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/f6Tb3eP8nmw?si=ZcgQIl_gJ3FXdY2Q"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>
+
 <section class="info container">
 
     <div class="info-img">
@@ -216,7 +223,7 @@ EOF;
 
             <button style="border: none" class="btn-2" type="submit">Enviar</button>
         </form>
-<!--        <a href="#" class="btn-2">Más Información</a>-->
+        <!--        <a href="#" class="btn-2">Más Información</a>-->
 
     </div>
 

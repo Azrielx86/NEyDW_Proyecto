@@ -1019,3 +1019,21 @@ div.products-container {
 .contact-form button {
     margin-top: 1rem;
 }
+
+.video-container {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.video-container {
+    font-size: 2rem;
+    color: #3C7A80;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.video-container iframe {
+    margin: auto;
+}
