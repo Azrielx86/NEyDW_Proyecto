@@ -193,6 +193,18 @@ EOF;
     </div>
 </main>
 
+<section class="who-are-we container">
+    <h2>A la puerta de tu casa</h2>
+
+    <h3>¿Quiénes somos?</h3>
+    <p>
+        Somos una empresa que exporta dulces extranjeros a un precio más asequible para el mercado mexicano.
+    </p>
+    <p>
+        Conseguimos productos de países como Japón, China, Estados Unidos, Corea del Sur, y muchos más.
+    </p>
+</section>
+
 <section class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/f6Tb3eP8nmw?si=ZcgQIl_gJ3FXdY2Q"
             title="YouTube video player" frameborder="0"

@@ -1037,3 +1037,30 @@ div.products-container {
 .video-container iframe {
     margin: auto;
 }
+
+.who-are-we {
+    margin: 2rem auto;
+}
+
+.who-are-we h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #3C7A80;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.who-are-we h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #3C7A80;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.who-are-we p {
+    text-align: center;
+    color: #3C7A80;
+}
