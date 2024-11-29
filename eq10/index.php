@@ -259,19 +259,19 @@ EOF;
                 <h4>Redes Sociales</h4>
 
                 <div class="socials">
-                    <a href="#">
+                    <a target="_blank" href="https://github.com/Azrielx86/NEyDW_Proyecto">
                         <div class="social">
                             <img src="icons/s1.svg" alt="">
                         </div>
                     </a>
 
-                    <a href="#">
+                    <a target="_blank" href="https://github.com/Azrielx86/NEyDW_Proyecto">
                         <div class="social">
                             <img src="icons/s2.svg" alt="">
                         </div>
                     </a>
 
-                    <a href="#">
+                    <a target="_blank" href="https://github.com/Azrielx86/NEyDW_Proyecto">
                         <div class="social">
                             <img src="icons/s3.svg" alt="">
                         </div>
