@@ -5,6 +5,7 @@
     <title>Log in</title>
     <!--    <link rel="stylesheet" href="styleli.css">-->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         * {

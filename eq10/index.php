@@ -12,6 +12,7 @@ global $server, $username, $password, $dbname;
     <title>Inicio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 

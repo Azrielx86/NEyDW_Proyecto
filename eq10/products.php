@@ -9,6 +9,7 @@ global $server, $username, $password, $dbname;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
